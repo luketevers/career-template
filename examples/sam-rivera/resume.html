@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sam Rivera — Resume</title>
+    <style>
+/* classic — single column, generous rhythm, prints to one US Letter page. */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #1c1e21;
+  --muted: #5b6068;
+  --rule: #d8dbe0;
+  --accent: #24435c;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--ink);
+  font-size: 10.5pt;
+  line-height: 1.38;
+}
+
+.page { max-width: 7.6in; margin: 0 auto; padding: 0.45in 0.25in 0.3in; }
+
+.header { display: flex; justify-content: space-between; align-items: flex-end;
+  border-bottom: 2px solid var(--accent); padding-bottom: 8px; }
+.header h1 { font-size: 21pt; letter-spacing: 0.5px; }
+.header h4 { font-weight: normal; color: var(--muted); margin-top: 2px; }
+.header--right { text-align: right; font-size: 9pt; color: var(--muted); }
+.header--right a { color: var(--muted); text-decoration: none; }
+
+.section { margin-top: 12px; }
+.section > h4 {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 8.5pt; letter-spacing: 1.6px; text-transform: uppercase;
+  color: var(--accent); border-bottom: 1px solid var(--rule);
+  padding-bottom: 2px; margin-bottom: 6px;
+}
+
+.summary { max-width: 100%; }
+
+.skills dt {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold; font-size: 8.5pt; float: left; clear: left;
+  width: 1.05in; padding-top: 1px;
+}
+.skills dd { margin-left: 1.15in; margin-bottom: 3px; }
+
+.job { margin-bottom: 9px; }
+.job--title { font-size: 11pt; }
+.job--roles { color: var(--muted); font-size: 9pt; margin: 1px 0 2px; }
+.job--meta { color: var(--muted); font-size: 9pt; float: right; margin-top: -28px; }
+.job ul { margin: 3px 0 0 0.18in; }
+.job li { margin-bottom: 2.5px; }
+
+.section--tail { border-top: 1px solid var(--rule); padding-top: 8px; }
+
+@page { size: letter; margin: 0; }
+@media print { .page { padding-top: 0.4in; } }
+
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="header--left">
+          <h1>Sam Rivera</h1>
+          <h4>Full-Stack Engineer</h4>
+        </div>
+        <div class="header--right">
+          <div>Chicago, IL</div>
+<div><a href="mailto:sam.rivera@example.com">sam.rivera@example.com</a></div>
+<div><a href="https://www.linkedin.com/in/example-sam-rivera">www.linkedin.com/in/example-sam-rivera</a></div>
+<div><a href="https://samrivera.example.com">samrivera.example.com</a></div>
+<div><a href="https://github.com/example-samrivera">github.com/example-samrivera</a></div>
+        </div>
+      </header>
+
+      <section class="section">
+        <h4>Summary</h4>
+        <p class="summary">Full-stack engineer, 8 years, shipping LLM-assisted product features with evaluation discipline at a logistics SaaS. Strongest where a feature spans the data model, the API, and the UI.</p>
+      </section>
+
+      <section class="section">
+        <h4>Core Skills</h4>
+        <dl class="skills">
+<dt>Languages</dt>
+<dd>TypeScript, Python, SQL</dd>
+<dt>Frontend</dt>
+<dd>React, SvelteKit</dd>
+<dt>Backend</dt>
+<dd>FastAPI, PostgreSQL, Redis, AWS</dd>
+<dt>AI</dt>
+<dd>LLM feature development, offline evaluation, prompt design</dd>
+</dl>
+      </section>
+
+      <section class="section">
+        <h4>Experience</h4>
+        <div class="job">
+<p class="job--title"><strong>Corvid Systems</strong>, B2B logistics SaaS, ~300 people</p>
+<p class="job--roles">Senior Software Engineer (2022-03 to Present)</p>
+<p class="job--meta">Chicago, IL (hybrid)</p>
+<ul>
+<li>Shipped an LLM-assisted exception triage feature that cut average shipment-exception resolution time from 41 minutes to 12, gated on an offline evaluation set of 500 labeled historical exceptions.</li>
+<li>Built the internal support console used daily by 200+ operations agents: React/TypeScript front end over a Python API, replacing three spreadsheet workflows.</li>
+<li>Led the billing data-model refactor that unblocked usage-based pricing; migrated 4 years of invoice history with zero reconciliation discrepancies.</li>
+<li>Mentor two mid-level engineers; run the team&#x27;s design-review rotation.</li>
+</ul>
+</div>
+<div class="job">
+<p class="job--title"><strong>Bluejay Health</strong>, appointment scheduling for independent clinics</p>
+<p class="job--roles">Software Engineer (2018-06 to 2022-02)</p>
+<p class="job--meta">Remote</p>
+<ul>
+<li>Took the clinic self-scheduling flow from prototype to production across 900 clinics, including calendar-sync integrations with two EHR vendors.</li>
+<li>Cut pager volume roughly in half in one quarter by adding idempotent retries and dead-letter handling to the reminder pipeline.</li>
+</ul>
+</div>
+      </section>
+
+      <section class="section section--tail">
+        <dl class="skills">
+<dt>RecipeBox</dt>
+<dd>Open-source meal-planning web app (SvelteKit + SQLite) with 300 GitHub stars.</dd>
+</dl>
+        <dl class="skills">
+<dt>Education</dt>
+<dd>B.S. Computer Science, University of Illinois Chicago, 2014-2018</dd>
+</dl>
+      </section>
+    </div>
+  </body>
+</html>
