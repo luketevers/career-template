@@ -42,8 +42,9 @@ section in conversation. Guidance per section:
 
 Copy `templates/resume.yaml` to `resume/resume.yaml`. Select and order
 bullets with the user; write the summary together (2-4 sentences, their
-strongest true claims). Copy `templates/writing-feedback.md` to the root —
-the voice skill will bootstrap it on first drafting.
+strongest true claims). Copy `templates/writing-feedback.md` and `templates/fit-feedback.md` to
+the root — the voice skill bootstraps the first on first drafting; the
+pipeline announces the second on first ranking.
 
 ## 3. First render
 

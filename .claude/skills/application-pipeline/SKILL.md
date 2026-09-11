@@ -40,7 +40,11 @@ Identify the ATS and use its API rather than scraping the JS page:
 ## 2. Rank fit
 
 Read from `profile.yaml`: `targets` (locations, onsite_days_max, levels,
-comp_floor_usd), `strengths`, `gaps`, and the history bullets.
+comp_floor_usd), `strengths`, `gaps`, and the history bullets. Then read
+`fit-feedback.md` — the user's logged corrections to past rankings. Apply
+its learned rules and CITE them in the assessment ("per your rule: domain
+match outweighs stack gaps"). If the file still carries the SEEDED-EMPTY
+marker, tell the user their corrections will be learned from here on.
 
 - Give honest fit percentages. Name which of the user's `gaps` the posting
   will probe — that's the section's purpose. A ranking that never cites a
@@ -48,6 +52,11 @@ comp_floor_usd), `strengths`, `gaps`, and the history bullets.
 - Flag postings below `comp_floor_usd` or beyond `onsite_days_max` rather
   than hiding them; those are the user's calls.
 - Recommend ONE primary role per company; note a fallback req in links.md.
+- When the user corrects a ranking (reorders, changes a number, vetoes):
+  append a dated entry to `fit-feedback.md` — agent number, user number,
+  the user's reason in their words — in the same commit, and distill a rule
+  into its Fit Rules section when a pattern repeats. The TRACKER records
+  the user-approved number; that is what the season retro audits.
 - Check the current season's tracker (`searches/<season>/applications.md`)
   for already-applied companies.
 

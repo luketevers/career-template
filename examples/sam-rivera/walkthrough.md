@@ -45,6 +45,20 @@ work-authorization line shown for Sam to type — never auto-filled.
 from Sam's writing samples plus one logged correction ("cut the last
 line, I'd never compliment a company's blog") that became a standing rule.
 
+## US2b — fit judgment that learns
+
+`fit-feedback.md` holds Sam's two logged corrections. A later ranking run
+applies them visibly (excerpt from the recorded run):
+
+> **Vanta-adjacent compliance role — ~82%** (base ~72%; per your rule:
+> regulated-workflow domain familiarity from the Bluejay years upgrades
+> compliance products ~10 points). **Mintlify-style role — ranked last
+> regardless of 78% fit: 4 days in office, and your rule makes the onsite
+> ceiling a sort key, not a footnote.**
+
+The Vanta correction is the loop's proof: Sam overrode the agent's 70% to
+80%, and the season retro shows that application becoming the offer.
+
 ## US3 — season lifecycle
 
 ```

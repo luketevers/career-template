@@ -18,6 +18,7 @@ your career data. That only works if the boundary is absolute.
 - `resume/` — your resume source and rendered PDFs
 - `searches/` — every season, open or closed
 - `writing-feedback.md` — your voice rules and log
+- `fit-feedback.md` — your fit-judgment rules and log
 
 ## How to take an engine update
 

@@ -19,7 +19,8 @@ them in the tracker's Notes.
 - When the user reports applying: add the row — company, role, date, resume
   file, **predicted fit** (from the pipeline's ranking; the retro is
   computed from it), stage `applied`, first-response `—`. Commit and push.
-  Only the user's report moves a row to applied.
+  Only the user's report moves a row to applied. After any tracker change,
+  regenerate the board: `python3 engine/board.py <season-id>`.
 - Stage vocabulary: `applied → screen → onsite → offer` and terminal
   `rejected / withdrawn / ghosted / accepted`. Record First response the
   first time a human (or rejection) responds.
@@ -57,7 +58,9 @@ manually.
    fit vs final stage vs days-to-first-response) and stamps the tracker
    CLOSED.
 3. Fill the retro's Reads section WITH the user: did predictions track
-   outcomes? which strengths converted? which gaps got probed?
+   outcomes? which strengths converted? which gaps got probed? Where did
+   the user's corrected fits diverge from the agent's — and who was right?
+   (Feed the answer back into fit-feedback.md's rules.)
 4. Promote durable lessons upward: resume facts → `resume/`, voice lessons
    → `writing-feedback.md`, process fixes → skills/CLAUDE.md. List what
    moved in the retro.
