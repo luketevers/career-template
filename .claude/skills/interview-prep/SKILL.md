@@ -36,6 +36,10 @@ interviewer probes the copy they're holding.
 - **Logistics**: calendar check for conflicts against tracker Notes
   constraints (connector users).
 
+Any prose drafted for the user to say or send during this process
+(thank-you notes, follow-ups, prepared answers) goes through the `voice`
+skill — bootstrap gate and feedback logging included.
+
 ## 3. Same-day debrief
 
 Append to `interview.md`: questions actually asked, what landed, what
