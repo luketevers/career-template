@@ -17,10 +17,19 @@ hold their career history, application record, and voice — it must never be
 a public fork of the template. If they created it from the GitHub template
 button, verify they chose Private.
 
-## 1. Interview into profile.yaml
+## 1. Onboard the structured fields
 
-Copy `templates/profile.yaml` to the repo root and fill it section by
-section in conversation. Guidance per section:
+Run the interactive onboarding: `python3 engine/onboard.py`. It fills the
+enumerable half of profile.yaml — identity basics, target job titles (a
+searchable list of 200+ titles across every field, custom entries welcome),
+seniority levels, locations, remote/onsite ceiling, compensation floor, and
+the resume page budget (`resume_style.max_pages`) — creating the file from
+the template with all schema comments intact. Safe to re-run when targets
+change.
+
+## 1b. Interview the rest into profile.yaml
+
+Fill the remaining sections in conversation. Guidance per section:
 
 - **identity/links**: verbatim from the user.
 - **targets**: make the user commit to numbers — comp floor, max onsite
@@ -52,11 +61,13 @@ pipeline announces the second on first ranking.
 python3 engine/build_resume.py --profile profile.yaml \
   --resume resume/resume.yaml --layout engine/layouts/classic \
   --out resume/resume.html
-python3 engine/render_check.py resume/resume.html --pdf resume/resume.pdf
+python3 engine/render_check.py resume/resume.html --pdf resume/resume.pdf \
+  --max-pages $(python3 -c "import yaml;print(yaml.safe_load(open('profile.yaml'))['resume_style']['max_pages'])")
 ```
 
 Show both layouts (`classic`, `compact`), let the user pick. Iterate until
-the check passes: exactly one page, no orphan lines. If content overflows,
+the check passes: within the profile's page budget (one page for most
+industries), no orphan lines. If content overflows,
 cut with the user — never shrink fonts below the layout's design.
 
 ## 4. Start the season

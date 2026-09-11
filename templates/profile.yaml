@@ -25,9 +25,16 @@ targets:
   locations: []           # cities/regions you'd work in, e.g. ["Chicago", "Remote (US)"]
   remote_ok: true
   onsite_days_max: 5      # your real floor; the pipeline flags postings above it
-  levels: []              # titles you're targeting, e.g. ["Senior", "Staff"]
+  titles: []              # target job titles — pick with engine/onboard.py's
+                          # searchable list, or write your own
+  levels: []              # seniority you're targeting, e.g. ["Senior", "Staff"]
   comp_floor_usd: 0       # postings below this get flagged, not hidden
   notes: ""               # anything else that gates a role for you
+
+# How your resume should render. One page suits most industries; academic
+# CVs, federal resumes, and some senior/exec roles legitimately run longer.
+resume_style:
+  max_pages: 1
 
 # Claims the agent may lead with. Short, true, backed by history bullets.
 strengths: []

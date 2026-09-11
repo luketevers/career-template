@@ -43,6 +43,12 @@ is architecturally the opposite, permanently, by constitution:
 
 Low volume, high tailoring, human accountability.
 
+**Who it's for**: anyone comfortable driving a coding agent, hunting any
+kind of role — the job-title picker spans engineering to nursing to
+finance, and the resume page budget is yours to set (one page by default;
+two-plus for academic/federal/exec formats). The personalization loops are
+field-agnostic by design: they learn from *you*.
+
 ## The workflow
 
 ```
@@ -78,9 +84,12 @@ setup ─► discover ─► rank (+your corrections) ─► tailor ─► apply
 ## Quickstart
 
 1. **Use this template** → create a **private** repo → clone it.
-2. Open it in Claude Code (other agents: [`AGENTS.md`](AGENTS.md)) and say
-   **"run setup"**.
-3. Give it a job board URL.
+2. `python3 engine/onboard.py` — pick your target titles from a searchable
+   list, set levels, locations, comp floor, and resume page budget.
+3. Open it in Claude Code (other agents: [`AGENTS.md`](AGENTS.md)) and say
+   **"run setup"** — the agent interviews you through the rest (history,
+   strengths, gaps) and builds your first resume.
+4. Give it a job board URL.
 
 Requirements: Python 3.11+, a Chromium-family browser (PDF rendering),
 `pip install pyyaml pdfminer.six`.

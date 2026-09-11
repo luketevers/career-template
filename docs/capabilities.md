@@ -23,8 +23,9 @@ into a void.
 
 | Command | What it does |
 |---|---|
+| `python3 engine/onboard.py` | Interactive onboarding for the structured profile fields: searchable job-title picker (200+ titles across every field, custom entries welcome), seniority, locations, remote/onsite ceiling, comp floor, resume page budget. Comment-preserving; safe to re-run. |
 | `python3 engine/build_resume.py --profile P --resume R --layout L --out O [--title T]` | Build a resume HTML from your profile + a selection file + a layout (`engine/layouts/classic` or `compact`). Fails on any bullet/project id not in your profile — the Truth Only enforcement point. |
-| `python3 engine/render_check.py FILE.html [--pdf OUT.pdf] [--max-pages 1] [--skip-orphans]` | Render via headless Chrome; verify page count and detect orphan lines (needs `pdfminer.six`; degrades to page-count-only without it). Accepts any HTML — hand-written resumes included. |
+| `python3 engine/render_check.py FILE.html [--pdf OUT.pdf] [--max-pages 1] [--skip-orphans]` | Render via headless Chrome; verify against `resume_style.max_pages` and detect orphan lines (needs `pdfminer.six`; degrades to page-count-only without it). Accepts any HTML — hand-written resumes included. |
 | `python3 engine/season.py scaffold ID` | Start a season (`searches/ID/` + tracker). IDs: `2026`, `2026b`. |
 | `python3 engine/season.py close ID` | Close a season: requires every row at a terminal stage; writes `retro.md` (predicted fit vs outcome vs response time); freezes the tracker. |
 | `python3 engine/board.py ID [--watch-days 14] [--out P]` | Render the season to a self-contained `board.html`: tiles, stage table, silence watchlist, retro link. A view, never a source of truth — delete and regenerate freely. |

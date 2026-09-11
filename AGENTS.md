@@ -18,8 +18,10 @@ or auto-fill anything — the human reviews and submits everything.**
 
 ## Workflows
 
-**Setup (new user)**: verify the repo is PRIVATE; interview the user to
-fill `profile.yaml` (facts only, outcome-first bullets with stable ids and
+**Setup (new user)**: verify the repo is PRIVATE; run
+`python3 engine/onboard.py` for the structured fields (searchable job-title
+picker, levels, locations, comp floor, resume page budget); then interview
+the user to fill the rest of `profile.yaml` (facts only, outcome-first bullets with stable ids and
 metrics; honest `gaps`); build `resume/resume.yaml` as a selection of those
 ids; render and check (below) until green; `python3 engine/season.py
 scaffold <year>`.
@@ -38,7 +40,7 @@ scaffold <year>`.
    `python3 engine/build_resume.py --profile profile.yaml --resume <that
    file> --layout engine/layouts/classic --out <folder>/resume.html` and
    `python3 engine/render_check.py <folder>/resume.html --pdf <folder>/
-   "<Name> Resume - <Company>.pdf"`. Must exit 0: one page, no orphans.
+   "<Name> Resume - <Company>.pdf"`. Must exit 0: within `resume_style.max_pages` (default 1), no orphans.
    (Hand-written HTML: skip the build, still run the check.)
 4. Enumerate every form field; present a checklist starting with the apply
    link; the user fills sensitive fields themselves.

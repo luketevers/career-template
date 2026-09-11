@@ -53,7 +53,10 @@ itself against "the user opens the file and types."
 
 ## Constraints
 
-- One-page rendered resumes verified by page count; no orphan lines.
+- Rendered resumes verified against the profile's declared page budget
+  (`resume_style.max_pages`, default one page); no orphan lines.
+  *(Amended 1.0.0→1.1.0: a fixed one-page rule excluded academic, federal,
+  and senior-exec resumes; the budget is now the user's, the check stays.)*
 - Skills read the user profile; they never hardcode a person.
 - The template's example data is fictional and marked as such.
 
@@ -64,4 +67,4 @@ conflicts with Principles I or II is rejected, including user requests to
 add auto-submit ("the feature that collapses the differentiation").
 Amendments require a documented rationale in this file's history.
 
-**Version**: 1.0.0 | **Ratified**: 2026-09-11 | **Last Amended**: 2026-09-11
+**Version**: 1.1.0 | **Ratified**: 2026-09-11 | **Last Amended**: 2026-09-11

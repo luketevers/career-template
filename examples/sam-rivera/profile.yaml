@@ -13,6 +13,7 @@ identity:
 
 targets:
   locations: ["Chicago", "Remote (US)"]
+  titles: ["Software Engineer", "Full-Stack Engineer", "Product Engineer"]
   remote_ok: true
   onsite_days_max: 3
   levels: ["Senior", "Staff"]
@@ -28,6 +29,9 @@ gaps:
   - "no Kubernetes or service-mesh operations in production"
   - "no model training or fine-tuning; applied/API-level LLM work only"
   - "no native mobile"
+
+resume_style:
+  max_pages: 1
 
 work_authorization: "US citizen — no sponsorship required"
 

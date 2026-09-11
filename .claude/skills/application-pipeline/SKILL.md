@@ -39,8 +39,10 @@ Identify the ATS and use its API rather than scraping the JS page:
 
 ## 2. Rank fit
 
-Read from `profile.yaml`: `targets` (locations, onsite_days_max, levels,
-comp_floor_usd), `strengths`, `gaps`, and the history bullets. Then read
+Read from `profile.yaml`: `targets` (titles, locations, onsite_days_max,
+levels, comp_floor_usd), `strengths`, `gaps`, and the history bullets.
+Filter and rank the board primarily around `targets.titles` (and near
+synonyms), surfacing near-misses worth a look rather than hiding them. Then read
 `fit-feedback.md` — the user's logged corrections to past rankings. Apply
 its learned rules and CITE them in the assessment ("per your rule: domain
 match outweighs stack gaps"). If the file still carries the SEEDED-EMPTY
@@ -71,8 +73,9 @@ Work in `searches/<season>/<company>/`:
    --resume searches/<season>/<company>/resume.yaml
    --layout engine/layouts/<layout> --out .../resume.html --title <Company>`
 3. Check: `python3 engine/render_check.py .../resume.html --pdf
-   ".../<Name> Resume - <Company>.pdf"`. Fix and re-run until clean —
-   one page, no orphan lines. Never hand over a failing render.
+   ".../<Name> Resume - <Company>.pdf" --max-pages <resume_style.max_pages>`.
+   Fix and re-run until clean — within the profile's page budget (default
+   one page), no orphan lines. Never hand over a failing render.
 4. Write `links.md`: posting URL, comp, fit notes with named gaps,
    alternates considered.
 5. Record the fit prediction in the tracker row when the user applies —

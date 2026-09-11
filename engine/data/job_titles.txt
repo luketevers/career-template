@@ -1,0 +1,220 @@
+# Curated base job titles for the onboarding picker (one per line).
+# Seniority (Senior/Staff/Lead/Principal/Director/VP) lives in targets.levels;
+# pick base titles here. Custom titles can always be typed in.
+Software Engineer
+Full-Stack Engineer
+Frontend Engineer
+Backend Engineer
+Mobile Engineer
+iOS Engineer
+Android Engineer
+DevOps Engineer
+Site Reliability Engineer
+Platform Engineer
+Infrastructure Engineer
+Cloud Engineer
+Security Engineer
+Application Security Engineer
+QA Engineer
+Test Engineer
+Embedded Systems Engineer
+Firmware Engineer
+Hardware Engineer
+Electrical Engineer
+Mechanical Engineer
+Civil Engineer
+Robotics Engineer
+Machine Learning Engineer
+AI Engineer
+Applied AI Engineer
+Data Engineer
+Analytics Engineer
+Data Scientist
+Data Analyst
+Business Intelligence Analyst
+Research Scientist
+Research Engineer
+Solutions Engineer
+Solutions Architect
+Sales Engineer
+Forward Deployed Engineer
+Support Engineer
+Technical Support Specialist
+Developer Advocate
+Developer Relations Engineer
+Technical Writer
+Documentation Manager
+Engineering Manager
+Technical Program Manager
+Program Manager
+Project Manager
+Product Manager
+Technical Product Manager
+Product Owner
+Product Designer
+UX Designer
+UI Designer
+UX Researcher
+Graphic Designer
+Brand Designer
+Motion Designer
+Industrial Designer
+Content Designer
+Design Manager
+Creative Director
+Art Director
+Copywriter
+Content Strategist
+Content Marketing Manager
+Marketing Manager
+Product Marketing Manager
+Growth Marketing Manager
+Performance Marketing Manager
+Digital Marketing Manager
+Email Marketing Manager
+SEO Specialist
+Social Media Manager
+Communications Manager
+Public Relations Manager
+Brand Manager
+Event Marketing Manager
+Marketing Analyst
+Demand Generation Manager
+Community Manager
+Account Executive
+Sales Development Representative
+Business Development Representative
+Business Development Manager
+Sales Manager
+Regional Sales Director
+Account Manager
+Customer Success Manager
+Customer Success Engineer
+Implementation Specialist
+Onboarding Specialist
+Customer Support Representative
+Partnerships Manager
+Channel Manager
+Revenue Operations Manager
+Sales Operations Manager
+Enablement Manager
+Solutions Consultant
+Pre-Sales Consultant
+Financial Analyst
+Finance Manager
+Strategic Finance Manager
+FP&A Analyst
+Accountant
+Staff Accountant
+Controller
+Bookkeeper
+Payroll Specialist
+Auditor
+Tax Analyst
+Treasury Analyst
+Investment Analyst
+Portfolio Manager
+Underwriter
+Actuary
+Risk Analyst
+Compliance Officer
+Compliance Analyst
+Credit Analyst
+Procurement Manager
+Sourcing Manager
+Supply Chain Manager
+Supply Chain Analyst
+Logistics Coordinator
+Operations Manager
+Operations Analyst
+Business Operations Manager
+Strategy and Operations Manager
+Business Analyst
+Management Consultant
+Strategy Consultant
+Chief of Staff
+Executive Assistant
+Administrative Assistant
+Office Manager
+Facilities Manager
+Human Resources Manager
+HR Business Partner
+HR Generalist
+People Operations Manager
+Recruiter
+Technical Recruiter
+Talent Acquisition Manager
+Sourcer
+Compensation Analyst
+Benefits Administrator
+Learning and Development Manager
+Organizational Development Specialist
+Employee Relations Specialist
+Attorney
+Corporate Counsel
+Paralegal
+Legal Operations Manager
+Contract Manager
+Policy Analyst
+Government Affairs Manager
+Grant Writer
+Program Officer
+Nonprofit Program Manager
+Development Director
+Fundraising Manager
+Volunteer Coordinator
+Registered Nurse
+Nurse Practitioner
+Physician Assistant
+Medical Assistant
+Clinical Research Coordinator
+Clinical Data Manager
+Healthcare Administrator
+Practice Manager
+Medical Billing Specialist
+Health Information Technician
+Pharmacist
+Pharmacy Technician
+Physical Therapist
+Occupational Therapist
+Speech-Language Pathologist
+Dietitian
+Social Worker
+Case Manager
+Mental Health Counselor
+Teacher
+Instructional Designer
+Curriculum Developer
+Academic Advisor
+Admissions Counselor
+Education Program Manager
+Librarian
+Researcher
+Lab Technician
+Quality Assurance Specialist
+Quality Manager
+Regulatory Affairs Specialist
+Manufacturing Engineer
+Process Engineer
+Production Manager
+Plant Manager
+Maintenance Technician
+Field Service Technician
+Construction Manager
+Estimator
+Architect
+Urban Planner
+Real Estate Analyst
+Property Manager
+Journalist
+Editor
+Producer
+Video Editor
+Photographer
+Podcast Producer
+Translator
+Interpreter
+Customer Experience Manager
+Trust and Safety Analyst
+Fraud Analyst
+Investigator

@@ -9,3 +9,8 @@
 - [x] T044 [US3] `docs/capabilities.md` — the full reference (loops, commands, skills, stages, connectors) (FR-018)
 - [x] T045 [US3] README overhaul: the workflow narrative, three loops, board, docs links
 - [x] T046 Doc audit (SC-007) + full tests + personal-data audit; tick tasks
+
+## Addendum (maintainer-directed, 2026-09-11)
+
+- [x] T047 Generalization fixes: `resume_style.max_pages` in the profile schema, wired through render checks, skills, AGENTS.md, and a constitution amendment (1.1.0); README audience-scoping paragraph
+- [x] T048 `engine/onboard.py`: interactive structured onboarding — searchable job-title picker over `engine/data/job_titles.txt` (200+ titles across fields, custom entries), levels/locations/remote/onsite/comp-floor/page-budget; comment-preserving writes; `tests/test_onboard.py`
