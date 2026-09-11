@@ -1,0 +1,18 @@
+# User-owned files (Constitution III). These exist in a USER's private clone,
+# never in the template. Listing them here keeps an accidental `git add -A`
+# in a template-development checkout from committing someone's real data.
+/profile.yaml
+/resume/
+/searches/
+/writing-feedback.md
+
+# Local personal-data audit blocklist (contains the maintainer's identifiers)
+scripts/audit-blocklist.txt
+
+# Environment noise
+.DS_Store
+__pycache__/
+*.pyc
+.pytest_cache/
+/build/
+*.egg-info/

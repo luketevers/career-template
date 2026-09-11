@@ -1,0 +1,17 @@
+[project]
+name = "career-engine"
+version = "0.1.0"
+description = "Engine scripts for the career template: resume build, render checks, season lifecycle"
+requires-python = ">=3.11"
+dependencies = [
+  "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+# Orphan-line detection in render_check needs PDF text extraction.
+# Page-count checking works without it.
+checks = ["pdfminer.six>=20221105"]
+dev = ["pytest>=8.0", "pdfminer.six>=20221105"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

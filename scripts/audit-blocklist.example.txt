@@ -1,0 +1,15 @@
+# One pattern per line; case-insensitive substring match against file
+# contents and file names. Comments and blank lines ignored.
+#
+# Put in the REAL blocklist (scripts/audit-blocklist.txt, git-ignored):
+#   - your first and last name, separately and together
+#   - every personal email address and its local part
+#   - your employers, past and present
+#   - your personal domains and usernames
+#   - project names that identify you
+#
+# Example entries (placeholders):
+jane doe
+janedoe@
+acme corporation
+janedoe.dev
