@@ -57,6 +57,19 @@ Requirements: Python 3.11+, a Chromium-family browser for PDF rendering,
 
 ## See it work
 
+**37-second demo** (recorded live against the engine and a real job board):
+
+```
+uvx asciinema play demo/demo.cast     # or: asciinema play demo/demo.cast
+```
+
+Or run the whole thing yourself — it's real commands, including the part
+where the resume refuses to lie:
+
+```
+bash demo/demo.sh
+```
+
 `examples/sam-rivera/` is a complete fictional user: profile, rendered
 one-page resume, seeded voice log, and a closed season with a generated
 calibration retro — reproducible command by command via

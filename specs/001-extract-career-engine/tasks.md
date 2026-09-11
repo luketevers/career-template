@@ -116,7 +116,7 @@
 
 - [x] T032 [P] `README.md`: the thesis ("the resume that compounds"), anti-spam positioning, quickstart (clone → setup skill → first variant), architecture sketch, Sam demo pointers
 - [x] T033 [P] `CLAUDE.md`: conventions distilled from the constitution for in-repo agent sessions (mirrors the private repo's, re-authored)
-- [ ] T034 Record the demo: US1 run as Sam against a live board (asciinema or video), linked from README
+- [x] T034 Record the demo: US1 run as Sam against a live board (asciinema or video), linked from README — demo/demo.sh (runnable) + demo/demo.cast (37s recording)
 - [x] T035 Populate `scripts/audit-blocklist.txt` locally (author identifiers) and run `scripts/audit_personal_data.sh` clean; fix any hits
 - [ ] T036 Cross-check every FR against the tree (checklist in `specs/001-extract-career-engine/launch-check.md`); verify SC-001 with one non-author test user if available
 - [ ] T037 Flip repo public, enable GitHub template flag, tag `v0.1.0`
