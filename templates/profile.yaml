@@ -1,0 +1,76 @@
+# ═══════════════════════════════════════════════════════════════════════
+# profile.yaml — the single source of truth about YOU.
+#
+# Everything the agent generates (resume variants, application answers,
+# fit assessments) derives from THIS file. The rule is absolute: if a fact
+# is not in here, the agent may not state it (Constitution I — Truth Only).
+# When the agent needs a fact this file lacks, it asks you and you add it
+# here first.
+#
+# This file is user-owned: it lives only in your private clone and is
+# git-ignored by the template. Engine updates never touch it.
+# ═══════════════════════════════════════════════════════════════════════
+
+identity:
+  name: ""
+  email: ""
+  location: ""            # what a recruiter should read, e.g. "Chicago, IL"
+  links:
+    linkedin: ""          # full URLs
+    website: ""
+    github: ""
+
+# What you're looking for. The pipeline's fit rubric reads these directly.
+targets:
+  locations: []           # cities/regions you'd work in, e.g. ["Chicago", "Remote (US)"]
+  remote_ok: true
+  onsite_days_max: 5      # your real floor; the pipeline flags postings above it
+  levels: []              # titles you're targeting, e.g. ["Senior", "Staff"]
+  comp_floor_usd: 0       # postings below this get flagged, not hidden
+  notes: ""               # anything else that gates a role for you
+
+# Claims the agent may lead with. Short, true, backed by history bullets.
+strengths: []
+  # - "production LLM systems with evaluation discipline"
+
+# Things you will NOT pretend to have. The fit rubric names these honestly
+# in every assessment instead of papering over them. Filling this section
+# well is the difference between useful rankings and flattery.
+gaps: []
+  # - "no Kubernetes in production"
+
+# Stated once by you; shown in submit checklists; NEVER auto-filled into
+# any form (Constitution II).
+work_authorization: ""    # e.g. "US citizen — no sponsorship needed"
+
+# Your work history. Bullets are the provenance pool: every line that ever
+# appears on a rendered resume references a bullet id from here, verbatim
+# or lightly recomposed without adding facts.
+history:
+  - company: ""
+    blurb: ""             # one line: what the company is/does
+    location: ""
+    roles:
+      - title: ""
+        start: ""         # YYYY-MM
+        end: ""           # YYYY-MM or "present"
+    bullets:
+      - id: ""            # stable slug, e.g. acme-checkout-rewrite
+        text: ""          # outcome first, plain language, one or two sentences
+        metrics: []       # the numbers inside the text, listed for verification
+                          # e.g. ["37% latency reduction", "2M daily users"]
+
+education:
+  - school: ""
+    credential: ""        # e.g. "B.S. Computer Science"
+    years: ""             # e.g. "2012-2016"
+
+# Side projects worth a resume line. Same provenance rules as bullets.
+projects:
+  - id: ""
+    name: ""
+    text: ""
+
+# Optional free-form notes the agent may read for context but never quote
+# as fact (e.g., how you like to describe yourself, topics to avoid).
+notes: ""

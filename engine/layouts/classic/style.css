@@ -1,0 +1,54 @@
+/* classic — single column, generous rhythm, prints to one US Letter page. */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #1c1e21;
+  --muted: #5b6068;
+  --rule: #d8dbe0;
+  --accent: #24435c;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--ink);
+  font-size: 10.5pt;
+  line-height: 1.38;
+}
+
+.page { max-width: 7.6in; margin: 0 auto; padding: 0.45in 0.25in 0.3in; }
+
+.header { display: flex; justify-content: space-between; align-items: flex-end;
+  border-bottom: 2px solid var(--accent); padding-bottom: 8px; }
+.header h1 { font-size: 21pt; letter-spacing: 0.5px; }
+.header h4 { font-weight: normal; color: var(--muted); margin-top: 2px; }
+.header--right { text-align: right; font-size: 9pt; color: var(--muted); }
+.header--right a { color: var(--muted); text-decoration: none; }
+
+.section { margin-top: 12px; }
+.section > h4 {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 8.5pt; letter-spacing: 1.6px; text-transform: uppercase;
+  color: var(--accent); border-bottom: 1px solid var(--rule);
+  padding-bottom: 2px; margin-bottom: 6px;
+}
+
+.summary { max-width: 100%; }
+
+.skills dt {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold; font-size: 8.5pt; float: left; clear: left;
+  width: 1.05in; padding-top: 1px;
+}
+.skills dd { margin-left: 1.15in; margin-bottom: 3px; }
+
+.job { margin-bottom: 9px; }
+.job--title { font-size: 11pt; }
+.job--roles { color: var(--muted); font-size: 9pt; margin: 1px 0 2px; }
+.job--meta { color: var(--muted); font-size: 9pt; float: right; margin-top: -28px; }
+.job ul { margin: 3px 0 0 0.18in; }
+.job li { margin-bottom: 2.5px; }
+
+.section--tail { border-top: 1px solid var(--rule); padding-top: 8px; }
+
+@page { size: letter; margin: 0; }
+@media print { .page { padding-top: 0.4in; } }

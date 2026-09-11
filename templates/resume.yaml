@@ -1,0 +1,30 @@
+# ═══════════════════════════════════════════════════════════════════════
+# resume.yaml — your evergreen resume as a SELECTION from profile.yaml.
+#
+# This file decides what appears and in what order; profile.yaml decides
+# what is true. Experience entries reference bullet ids — the build fails
+# on any id that doesn't exist in your profile, which is how "the resume
+# cannot lie" is enforced in code rather than by review.
+#
+# Tailored variants for specific companies are copies of this file with a
+# different selection/order and (optionally) a reworded summary; they live
+# in searches/<season>/<company>/resume.yaml.
+# ═══════════════════════════════════════════════════════════════════════
+
+title: ""                 # the line under your name, e.g. "Full-Stack Engineer"
+
+summary: ""               # 2-4 plain sentences; the agent tunes this per
+                          # variant but may only state profile-backed facts
+
+skills:
+  - group: ""             # e.g. "Languages"
+    items: []             # e.g. ["TypeScript", "Python"]
+
+experience:
+  - company: ""           # must match a history entry in profile.yaml
+    include: []           # bullet ids, in the order they should print
+
+projects: []              # project ids from profile.yaml, in order; [] hides
+                          # the section
+
+show_education: true

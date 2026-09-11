@@ -1,0 +1,99 @@
+# FICTIONAL EXAMPLE — Sam Rivera does not exist. Every company, metric, and
+# date below is invented to demonstrate the schema and the pipeline. Do not
+# reuse these facts.
+
+identity:
+  name: Sam Rivera
+  email: sam.rivera@example.com
+  location: Chicago, IL
+  links:
+    linkedin: https://www.linkedin.com/in/example-sam-rivera
+    website: https://samrivera.example.com
+    github: https://github.com/example-samrivera
+
+targets:
+  locations: ["Chicago", "Remote (US)"]
+  remote_ok: true
+  onsite_days_max: 3
+  levels: ["Senior", "Staff"]
+  comp_floor_usd: 185000
+  notes: "prefers product-engineering roles over pure infrastructure"
+
+strengths:
+  - "production LLM features shipped with evaluation before launch"
+  - "full-stack ownership from data model to UI at a 40-person startup"
+  - "internal tools with real adoption (support tooling used by 200+ agents daily)"
+
+gaps:
+  - "no Kubernetes or service-mesh operations in production"
+  - "no model training or fine-tuning; applied/API-level LLM work only"
+  - "no native mobile"
+
+work_authorization: "US citizen — no sponsorship required"
+
+history:
+  - company: Corvid Systems
+    blurb: "B2B logistics SaaS, ~300 people"
+    location: Chicago, IL (hybrid)
+    roles:
+      - title: Senior Software Engineer
+        start: 2022-03
+        end: present
+    bullets:
+      - id: corvid-eta-llm
+        text: >-
+          Shipped an LLM-assisted exception triage feature that cut average
+          shipment-exception resolution time from 41 minutes to 12, gated on
+          an offline evaluation set of 500 labeled historical exceptions.
+        metrics: ["41 to 12 minutes", "500 labeled cases"]
+      - id: corvid-support-console
+        text: >-
+          Built the internal support console used daily by 200+ operations
+          agents: React/TypeScript front end over a Python API, replacing
+          three spreadsheet workflows.
+        metrics: ["200+ daily users", "3 workflows replaced"]
+      - id: corvid-billing-refactor
+        text: >-
+          Led the billing data-model refactor that unblocked usage-based
+          pricing; migrated 4 years of invoice history with zero
+          reconciliation discrepancies.
+        metrics: ["4 years of history", "zero discrepancies"]
+      - id: corvid-mentoring
+        text: >-
+          Mentor two mid-level engineers; run the team's design-review
+          rotation.
+        metrics: []
+  - company: Bluejay Health
+    blurb: "appointment scheduling for independent clinics"
+    location: Remote
+    roles:
+      - title: Software Engineer
+        start: 2018-06
+        end: 2022-02
+    bullets:
+      - id: bluejay-scheduling
+        text: >-
+          Took the clinic self-scheduling flow from prototype to production
+          across 900 clinics, including calendar-sync integrations with two
+          EHR vendors.
+        metrics: ["900 clinics", "2 EHR integrations"]
+      - id: bluejay-oncall
+        text: >-
+          Cut pager volume roughly in half in one quarter by adding
+          idempotent retries and dead-letter handling to the reminder
+          pipeline.
+        metrics: ["~50% fewer pages", "one quarter"]
+
+education:
+  - school: University of Illinois Chicago
+    credential: B.S. Computer Science
+    years: 2014-2018
+
+projects:
+  - id: proj-recipebox
+    name: RecipeBox
+    text: >-
+      Open-source meal-planning web app (SvelteKit + SQLite) with 300
+      GitHub stars.
+
+notes: "Prefers plain, direct writing. Dislikes buzzwords."

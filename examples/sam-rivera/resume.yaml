@@ -1,0 +1,28 @@
+# FICTIONAL EXAMPLE — Sam Rivera's evergreen resume selection.
+
+title: "Full-Stack Engineer"
+
+summary: >-
+  Full-stack engineer, 8 years, shipping LLM-assisted product features with
+  evaluation discipline at a logistics SaaS. Strongest where a feature spans
+  the data model, the API, and the UI.
+
+skills:
+  - group: Languages
+    items: [TypeScript, Python, SQL]
+  - group: Frontend
+    items: [React, SvelteKit]
+  - group: Backend
+    items: [FastAPI, PostgreSQL, Redis, AWS]
+  - group: AI
+    items: [LLM feature development, offline evaluation, prompt design]
+
+experience:
+  - company: Corvid Systems
+    include: [corvid-eta-llm, corvid-support-console, corvid-billing-refactor, corvid-mentoring]
+  - company: Bluejay Health
+    include: [bluejay-scheduling, bluejay-oncall]
+
+projects: [proj-recipebox]
+
+show_education: true
