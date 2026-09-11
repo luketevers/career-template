@@ -4,9 +4,18 @@
 
 **Created**: 2026-09-11
 
-**Status**: Draft
+**Status**: Clarified
 
 **Input**: User description: "extract the career engine from the private repo into a reusable template: parametrized skills reading profile.yaml, voice bootstrap, season scaffolding, resume templates with render checks, fictional example season"
+
+## Clarifications
+
+### Session 2026-09-11
+
+- Q: Resume authoring model? -> A: Both — structured YAML is the canonical path rendered through layouts; hand-written HTML is a supported escape hatch (keeps render checks, loses layout swapping).
+- Q: Agent targets for v1? -> A: Claude Code skills plus a generic AGENTS.md so other coding agents can run the file-based workflow; connector-dependent features (inbox/calendar sweeps) documented as Claude Code-only.
+- Q: Example season data? -> A: Fictional applicant (Sam Rivera) applying to REAL public postings; committed examples carry dated snapshots of the public posting data, live fetches happen in the demo.
+- Q: License? -> A: MIT.
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -119,7 +128,9 @@ correctly and presented as proposals, not writes.
 - **FR-007**: Season close MUST generate a retro (predicted fit vs stage reached vs response time) and freeze the season folder.
 - **FR-008**: There MUST be no code path or skill instruction that submits applications, sends email, or fills sensitive fields (demographics, work auth, comp) without explicit per-item user approval.
 - **FR-009**: A setup flow (documented, agent-runnable) MUST take a new user from clone to first tailored variant, including repo privatization guidance.
-- **FR-010**: Resume rendering MUST support at least two layout templates with a shared render-check script.
+- **FR-010**: The canonical resume source MUST be structured YAML rendered through at least two layout templates with a shared render-check script; a user-supplied HTML resume MUST also be accepted (render checks still apply; layout swapping does not).
+- **FR-011**: The engine MUST ship as Claude Code skills plus an equivalent generic AGENTS.md workflow; features requiring connectors are marked Claude Code-only and everything else MUST be runnable by any capable coding agent.
+- **FR-012**: The repository MUST be MIT licensed with a LICENSE file present from the first public commit.
 
 ### Key Entities
 
@@ -140,7 +151,7 @@ correctly and presented as proposals, not writes.
 
 ## Assumptions
 
-- Target users run Claude Code (or a compatible agent that reads the skills format) and can obtain their own email/calendar connectors; the template degrades gracefully without them (manual status entry).
+- Primary target is Claude Code; the AGENTS.md path is best-effort compatible with other coding agents. Email/calendar connectors are optional; the tracker supports manual status entry without them.
 - Distribution is a public GitHub template repo; users create private copies. No hosted service, accounts, or telemetry in v1.
 - The private `career` repo remains the reference implementation; extraction is a rewrite-into-clean-history, not a fork, to guarantee SC-004.
 - The Python tool (scoring board, adapters) is OUT OF SCOPE for v1 beyond documentation pointers; v1 is the skills-and-files engine. Revisit after the private repo's own tool reconciliation.
