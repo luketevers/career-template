@@ -15,3 +15,14 @@ dev = ["pytest>=8.0", "pdfminer.six>=20221105"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+# engine/ is a directory of scripts run as `python3 engine/<name>.py`, not an
+# importable package. This pyproject exists as the dependency manifest
+# (`pip install -e ".[dev]"`), so tell setuptools there is nothing to package
+# rather than letting auto-discovery choke on the flat repo layout.
+[tool.setuptools]
+packages = []

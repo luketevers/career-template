@@ -30,7 +30,7 @@ into a void.
 | `python3 engine/season.py close ID` | Close a season: requires every row at a terminal stage; writes `retro.md` (predicted fit vs outcome vs response time); freezes the tracker. |
 | `python3 engine/board.py ID [--watch-days 14] [--out P]` | Render the season to a self-contained `board.html`: tiles, stage table, silence watchlist, retro link. A view, never a source of truth — delete and regenerate freely. |
 | `bash demo/demo.sh` | The full demo on the fictional example data. |
-| `scripts/audit_personal_data.sh` | Maintainer tool: greps the tree against a local blocklist. |
+| `scripts/audit_personal_data.sh` | Maintainer tool: greps the tree against a local blocklist. CI runs it on every push to `main` from the `AUDIT_BLOCKLIST` repo secret (the blocklist file's contents); the job fails if the secret is unset. |
 
 ## Skills (Claude Code) / workflows (AGENTS.md)
 

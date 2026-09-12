@@ -1,0 +1,84 @@
+# CI for the career template. Nothing deploys — this repo is cloned and run
+# locally. CI exists to (1) keep engine/ honest for everyone who pulls engine
+# updates downstream and (2) block personal data from reaching the public
+# default branch.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: pytest (py${{ matrix.python }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+
+      - name: Install engine + dev deps
+        run: python -m pip install -e ".[dev]"
+
+      # ubuntu-latest ships Google Chrome; render_check.py finds it via
+      # CHROME_BIN. Liberation fonts are metric-compatible with Helvetica/
+      # Arial so page counts match a desktop render. There is no Georgia
+      # stand-in, so the orphan-line assertion on the Sam fixture is macOS-
+      # only (see tests/test_render_check.py); page count is asserted here.
+      - name: Fonts for PDF rendering
+        run: sudo apt-get install -y --no-install-recommends fonts-liberation
+
+      - name: Verify a browser is available (render tests must not skip)
+        env:
+          CHROME_BIN: google-chrome
+        run: |
+          python - <<'PY'
+          import sys
+          sys.path.insert(0, "engine")
+          import render_check as rc
+          chrome = rc.find_chrome()
+          print("chrome:", chrome)
+          sys.exit(0 if chrome else 1)
+          PY
+
+      - name: Run tests
+        env:
+          CHROME_BIN: google-chrome
+        run: python -m pytest -q -rs
+
+  audit:
+    name: personal-data audit
+    runs-on: ubuntu-latest
+    # The blocklist is itself personal data, so it lives in a repo secret
+    # (AUDIT_BLOCKLIST, the contents of scripts/audit-blocklist.txt). Secrets
+    # are not exposed to pull requests from forks, so skip there rather than
+    # fail every outside contribution; pushes to main always run it.
+    if: >-
+      github.event_name != 'pull_request' ||
+      github.event.pull_request.head.repo.full_name == github.repository
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Materialise blocklist from secret
+        env:
+          AUDIT_BLOCKLIST: ${{ secrets.AUDIT_BLOCKLIST }}
+        run: |
+          if [ -z "$AUDIT_BLOCKLIST" ]; then
+            echo "::error::AUDIT_BLOCKLIST secret is not set; the audit refuses to pass by default." >&2
+            exit 2
+          fi
+          printf '%s\n' "$AUDIT_BLOCKLIST" > scripts/audit-blocklist.txt
+
+      - name: Audit working tree
+        run: bash scripts/audit_personal_data.sh

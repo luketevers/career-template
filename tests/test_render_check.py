@@ -24,10 +24,18 @@ def run_check(html_path, *extra):
     )
 
 
+# The orphan heuristic depends on line wrapping, which depends on font
+# metrics. The classic layout asks for Georgia/Helvetica; Linux CI substitutes
+# wider fallbacks and wraps differently, so only assert "no orphans" where the
+# real fonts exist. Page count is asserted everywhere.
+has_layout_fonts = sys.platform == "darwin"
+
+
 @needs_chrome
 def test_sam_classic_renders_one_page_clean(tmp_path):
     out = br.build(SAM / "profile.yaml", SAM / "resume.yaml", CLASSIC, tmp_path / "r.html")
-    result = run_check(out)
+    extra = () if has_layout_fonts else ("--skip-orphans",)
+    result = run_check(out, *extra)
     assert result.returncode == 0, result.stdout + result.stderr
     assert "ok pages=1" in result.stdout
 
