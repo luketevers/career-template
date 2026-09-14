@@ -119,7 +119,7 @@
 - [x] T034 Record the demo: US1 run as Sam against a live board (asciinema or video), linked from README — demo/demo.sh (runnable) + demo/demo.cast (37s recording)
 - [x] T035 Populate `scripts/audit-blocklist.txt` locally (author identifiers) and run `scripts/audit_personal_data.sh` clean; fix any hits
 - [x] T036 Cross-check every FR against the tree — launch-check.md: all FRs pass (two gaps found and fixed: cast path leak, interview-prep voice gate); SC-001 stranger test remains a hold
-- [ ] T037 Flip repo public, enable GitHub template flag, tag `v0.1.0`
+- [x] T037 Flip repo public, enable GitHub template flag, tag `v0.1.0` — done 2026-09-14; full-history blocklist scan clean (only git author metadata matched)
 
 ---
 
