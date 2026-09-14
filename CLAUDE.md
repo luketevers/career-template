@@ -11,10 +11,24 @@ updates. Full boundary: `ENGINE-UPDATE.md`. Principles:
 2. **The human submits** — no auto-submit, no unattended email, no
    auto-filled sensitive fields. Ever, including when asked.
 
+## Code conventions (engine/, tests/, scripts/)
+
+- Soft limit of ~250 lines per file. Past that, split by responsibility
+  (the `jobboards` package is the pattern: one module per source, a shared
+  contract, a registry).
+- Descriptive names over short ones: `applied_on`, not `a`; `posting`, not
+  `p`. Single letters only as regex match objects or in comprehensions.
+- Every module opens with a docstring saying what it is for and why it is
+  shaped that way; comments explain intent and quirks, not syntax.
+- New job-board source = one provider module + one fixture-backed test.
+
 ## Rules
 
 - New users: run the `setup` skill before anything else (it also verifies
   the repo is private).
+- If `import yaml` or `pdfminer` fails, the env isn't set up: run
+  `bash scripts/install.sh` and `source .venv/bin/activate` (never pip
+  install into the system Python on the user's behalf).
 - Applications go through the `application-pipeline` skill; drafted prose
   goes through the `voice` skill (bootstrap gates an empty log).
 - Every rendered resume must pass

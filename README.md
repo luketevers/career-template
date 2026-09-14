@@ -63,8 +63,12 @@ setup ─► discover ─► rank (+your corrections) ─► tailor ─► apply
 1. **Setup** — the agent interviews you into `profile.yaml` (facts with
    provenance ids, strengths, and the gaps you refuse to bluff), builds
    your evergreen resume, checks the render, scaffolds a season. ~an hour.
-2. **Discover** — point it at any job board; postings come from the ATS
-   APIs (Ashby, Greenhouse, Lever, Workday).
+2. **Discover** — point it at any job board; postings come from public
+   ATS endpoints (Ashby, Greenhouse, Lever, Workday, SmartRecruiters,
+   Rippling, Workable, BambooHR, Personio, Recruitee) or aggregators
+   (Y Combinator, Ask HN: Who is hiring, Remotive, RemoteOK, and more) or
+   VC portfolio boards (Sequoia, Accel, Kleiner Perkins, …), normalized by
+   `engine/boards.py`.
 3. **Rank** — honest fit percentages that cite your stated gaps and your
    learned fit rules. Correct it freely; corrections are the point.
 4. **Tailor** — a one-page variant selected from your verified bullets,
@@ -84,15 +88,32 @@ setup ─► discover ─► rank (+your corrections) ─► tailor ─► apply
 ## Quickstart
 
 1. **Use this template** → create a **private** repo → clone it.
-2. `python3 engine/onboard.py` — pick your target titles from a searchable
+2. **Install** (macOS or Linux):
+
+   ```
+   bash scripts/install.sh          # add --with-browser to install Chrome/Chromium too
+   source .venv/bin/activate
+   ```
+
+   It finds Python 3.11+, creates `.venv/` with the two dependencies
+   (`pyyaml`, `pdfminer.six`), checks for a Chromium-family browser (PDF
+   rendering), and smoke-tests the engine on the fictional example. Nothing
+   is written into the repo. Activate the venv in each shell before running
+   the engine or your agent.
+3. `python3 engine/onboard.py` — pick your target titles from a searchable
    list, set levels, locations, comp floor, and resume page budget.
-3. Open it in Claude Code (other agents: [`AGENTS.md`](AGENTS.md)) and say
+4. Open it in Claude Code (other agents: [`AGENTS.md`](AGENTS.md)) and say
    **"run setup"** — the agent interviews you through the rest (history,
    strengths, gaps) and builds your first resume.
-4. Give it a job board URL.
+5. Give it a job board URL.
 
-Requirements: Python 3.11+, a Chromium-family browser (PDF rendering),
-`pip install pyyaml pdfminer.six`.
+<details>
+<summary>Installing by hand instead</summary>
+
+Python 3.11+; `pip install pyyaml pdfminer.six` (or `pip install -e ".[checks]"`);
+Chrome or Chromium on your `PATH`, or `export CHROME_BIN=/path/to/chrome`.
+Linux: `apt-get install chromium fonts-liberation`. macOS: `brew install --cask google-chrome`.
+</details>
 
 ## See it work
 
@@ -118,6 +139,20 @@ of Sam's fit corrections turned out to predict his offer), a season
 - [`.specify/memory/constitution.md`](.specify/memory/constitution.md) —
   the non-negotiables, and why.
 
+## Developing the engine
+
+```
+bash scripts/install.sh --dev     # adds pytest
+pytest                            # 24 tests; render tests skip without a browser
+```
+
+CI (`.github/workflows/ci.yml`) runs the suite on Linux with Chrome on every
+push and pull request, and runs `scripts/audit_personal_data.sh` on pushes to
+`main` against a blocklist held in the `AUDIT_BLOCKLIST` repo secret — the
+gate that keeps a maintainer's personal data out of the public template.
+Engine changes ship to users via [`ENGINE-UPDATE.md`](ENGINE-UPDATE.md), so
+the suite has to stay green.
+
 ## Layout
 
 | Path | What |
@@ -126,7 +161,7 @@ of Sam's fit corrections turned out to predict his offer), a season
 | `resume/`* | your evergreen resume (YAML → HTML → checked PDF) |
 | `searches/<season>/`* | one search: tracker, variants, board, retro |
 | `writing-feedback.md`* / `fit-feedback.md`* | loops 1 and 2 |
-| `engine/` | build, render-check, season, board scripts + two layouts |
+| `engine/` | build, render-check, season, board scripts + two layouts; `jobboards/` fetches job boards (one module per source) |
 | `.claude/skills/` | setup, application-pipeline, voice, season, interview-prep |
 
 \* user-owned: created at setup, never touched by template updates.
