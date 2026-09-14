@@ -17,6 +17,13 @@ hold their career history, application record, and voice — it must never be
 a public fork of the template. If they created it from the GitHub template
 button, verify they chose Private.
 
+## 0b. Environment
+
+If `python3 -c "import yaml, pdfminer"` fails or no Chrome/Chromium is
+found, have the user run `bash scripts/install.sh` (add `--with-browser` to
+install one) and `source .venv/bin/activate`, then continue. The script is
+idempotent and writes nothing into the repo.
+
 ## 1. Onboard the structured fields
 
 Run the interactive onboarding: `python3 engine/onboard.py`. It fills the

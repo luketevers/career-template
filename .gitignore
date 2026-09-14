@@ -17,3 +17,6 @@ __pycache__/
 .pytest_cache/
 /build/
 *.egg-info/
+
+# Local virtualenv from scripts/install.sh
+.venv/
