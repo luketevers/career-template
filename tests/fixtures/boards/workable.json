@@ -1,0 +1,35 @@
+{
+ "total": 2,
+ "results": [
+  {
+   "id": 1,
+   "shortcode": "AB12CD",
+   "title": "Backend Engineer",
+   "remote": true,
+   "published": "2026-09-01T00:00:00Z",
+   "location": {
+    "city": "Lisbon",
+    "region": "",
+    "country": "Portugal"
+   },
+   "department": [
+    "Engineering"
+   ]
+  },
+  {
+   "id": 2,
+   "shortcode": "EF34GH",
+   "title": "Account Manager",
+   "remote": false,
+   "published": "2026-09-02T00:00:00Z",
+   "location": {
+    "city": "London",
+    "region": "England",
+    "country": "UK"
+   },
+   "department": [
+    "Sales"
+   ]
+  }
+ ]
+}

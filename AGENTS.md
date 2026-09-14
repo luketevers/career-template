@@ -27,12 +27,14 @@ ids; render and check (below) until green; `python3 engine/season.py
 scaffold <year>`.
 
 **Apply to a role**:
-1. Fetch postings via the ATS API, not the JS page — Ashby
-   `api.ashbyhq.com/posting-api/job-board/{org}`, Greenhouse
-   `boards-api.greenhouse.io/v1/boards/{org}/jobs` (`?questions=true` for
-   form fields), Lever `api.lever.co/v0/postings/{org}?mode=json`, Workday
-   `{tenant}.wd{N}.myworkdayjobs.com/wday/cxs/{tenant}/{site}/jobs` (POST).
-   Unknown ATS: ask the user to paste the posting and form.
+1. Fetch postings with `python3 engine/boards.py <board-url> --titles-from
+   profile.yaml --json` (Ashby, Greenhouse, Lever, Workday, SmartRecruiters,
+   Rippling, Workable, BambooHR, Personio, Recruitee, plus aggregators `yc`,
+   `hn`, `remotive`, `remoteok`, `himalayas`, `jobicy`, `arbeitnow`, `wwr`, and
+   Consider/Getro-hosted VC portfolio boards by their `/jobs` URL;
+   `--list` for all). Form fields: Greenhouse `?questions=true`; otherwise
+   open `apply_url` and enumerate. Unknown ATS (exit 2): ask the user to
+   paste the posting and form.
 2. Rank fit against `profile.yaml` targets/strengths/gaps — name the gaps
    the posting will probe; flag comp/onsite violations rather than hiding.
 3. Tailor: copy `resume/resume.yaml` into `searches/<season>/<company>/`,

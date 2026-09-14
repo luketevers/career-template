@@ -1,0 +1,24 @@
+{
+ "offers": [
+  {
+   "id": 5001,
+   "title": "Frontend Developer",
+   "location": "Amsterdam, Netherlands",
+   "remote": true,
+   "published_at": "2026-08-30",
+   "careers_url": "https://example.recruitee.com/o/frontend-developer",
+   "careers_apply_url": "https://example.recruitee.com/o/frontend-developer/c/new",
+   "description": "<p>Build things.</p>"
+  },
+  {
+   "id": 5002,
+   "title": "Office Manager",
+   "location": "Berlin, Germany",
+   "remote": false,
+   "published_at": "2026-08-31",
+   "careers_url": "https://example.recruitee.com/o/office-manager",
+   "careers_apply_url": "https://example.recruitee.com/o/office-manager/c/new",
+   "description": "<p>Run the office.</p>"
+  }
+ ]
+}

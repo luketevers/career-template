@@ -1,0 +1,93 @@
+{
+ "offset": 0,
+ "limit": 2,
+ "totalFound": 1,
+ "content": [
+  {
+   "id": "744000148454651",
+   "name": "Data Operations Consultant ",
+   "uuid": "f4a3d5b9-5fa9-48af-ba55-30669c9c3e81",
+   "jobAdId": "f9fbb59b-d9db-4c26-a4c9-959f920b370a",
+   "defaultJobAd": true,
+   "refNumber": "REF2025N",
+   "company": {
+    "identifier": "smartrecruiters",
+    "name": "SmartRecruiters Inc"
+   },
+   "releasedDate": "2026-09-09T09:43:26.403Z",
+   "location": {
+    "city": "Poland",
+    "region": "Remote",
+    "country": "pl",
+    "remote": true,
+    "hybrid": false,
+    "fullLocation": "Poland, Remote, Poland"
+   },
+   "industry": {
+    "id": "computer_software",
+    "label": "Computer Software"
+   },
+   "department": {
+    "id": "5408931",
+    "label": "Technical Services"
+   },
+   "function": {
+    "id": "information_technology",
+    "label": "Information Technology"
+   },
+   "typeOfEmployment": {
+    "id": "contract",
+    "label": "Contract"
+   },
+   "experienceLevel": {
+    "id": "associate",
+    "label": "Associate"
+   },
+   "customField": [
+    {
+     "fieldId": "58b7e4d6e4b0885c92cd98ee",
+     "fieldLabel": "Department",
+     "valueId": "5408931",
+     "valueLabel": "Technical Services"
+    },
+    {
+     "fieldId": "68f89f37181dbd53b2d51cc1",
+     "fieldLabel": "SAP Cost Center",
+     "valueId": "ccc63762-5f8e-43c3-b3e1-05a5ce9b24e1",
+     "valueLabel": "545000309"
+    },
+    {
+     "fieldId": "COUNTRY",
+     "fieldLabel": "Country/Region",
+     "valueId": "pl",
+     "valueLabel": "Poland"
+    },
+    {
+     "fieldId": "58b7e4d6e4b0885c92cd98eb",
+     "fieldLabel": "Brands",
+     "valueId": "default",
+     "valueLabel": "SmartRecruiters Inc"
+    },
+    {
+     "fieldId": "617043f52193e5503b7715c3",
+     "fieldLabel": "SR Cost Center",
+     "valueId": "e5f0ae46-b6d3-46ed-9607-12414b4c048e",
+     "valueLabel": "3.06 COGS Technical Services"
+    },
+    {
+     "fieldId": "627035b6330a2b4d25aa0882",
+     "fieldLabel": "Career Site Department Labels",
+     "valueId": "694b6ffd-b262-41ff-b6f7-18cc9c2354bd",
+     "valueLabel": "Technology"
+    }
+   ],
+   "visibility": "PUBLIC",
+   "ref": "https://api.smartrecruiters.com/v1/companies/smartrecruiters/postings/744000148454651",
+   "language": {
+    "code": "en",
+    "label": "English",
+    "labelNative": "English (US)"
+   }
+  }
+ ]
+}

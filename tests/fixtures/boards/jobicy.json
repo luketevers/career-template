@@ -1,0 +1,46 @@
+{
+ "jobs": [
+  {
+   "id": 153226,
+   "url": "https://jobicy.com/jobs/153226-senior-performance-marketing-manager",
+   "jobSlug": "153226-senior-performance-marketing-manager",
+   "jobTitle": "Senior Performance Marketing Manager",
+   "companyName": "Tines",
+   "companyLogo": "https://jobicy.com/data/server-nyc0409/galaxy/mercury/2025/08/9285d376-221.png",
+   "jobIndustry": [
+    "Marketing & Sales"
+   ],
+   "jobType": [
+    "Full-Time"
+   ],
+   "jobGeo": "Ireland,  USA",
+   "jobLevel": "Senior",
+   "jobExcerpt": "Founded in 2018 with co-headquarters in Dublin and Boston, Tines powers some of the world's most important workflows. Our intelligent workflow platform applies …",
+   "jobDescription": "<p>Founded in 2018 with co-headquarters in Dublin and Boston, Tines powers some of the world's most important workflows. Our intelligent workflow platform appli…",
+   "pubDate": "2026-09-14T06:17:12+00:00",
+   "salaryMin": 210000,
+   "salaryMax": 240000,
+   "salaryCurrency": "USD",
+   "salaryPeriod": "yearly"
+  },
+  {
+   "id": 153228,
+   "url": "https://jobicy.com/jobs/153228-senior-site-reliability-engineer-3",
+   "jobSlug": "153228-senior-site-reliability-engineer-3",
+   "jobTitle": "Senior Site Reliability Engineer",
+   "companyName": "Playson",
+   "companyLogo": "https://jobicy.com/data/server-nyc0409/galaxy/mercury/2025/06/6f266d9c-221-1.png",
+   "jobIndustry": [
+    "DevOps & Infrastructure"
+   ],
+   "jobType": [
+    "Full-Time"
+   ],
+   "jobGeo": "Europe",
+   "jobLevel": "Senior",
+   "jobExcerpt": "About the Role We’re looking for a Senior Site Reliability Engineer to join our Infrastructure Squad - a lean &amp; senior team where ownership is high and expe…",
+   "jobDescription": "<p><strong>About the Role</strong></p>\n<p>We’re looking for a <strong>Senior Site Reliability Engineer</strong> to join our Infrastructure Squad - a lean &amp; …",
+   "pubDate": "2026-09-14T06:17:11+00:00"
+  }
+ ]
+}

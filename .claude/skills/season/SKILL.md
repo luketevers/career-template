@@ -32,7 +32,9 @@ Propose-only, always:
 1. Window: since the "Last sweep" timestamp in the tracker header
    (`newer_than` accordingly); update the timestamp after.
 2. Mail search: ATS senders — `ashbyhq.com`, `greenhouse-mail.io`,
-   `greenhouse.io`, `lever.co`, `myworkday*`, `ats.rippling.com` — plus
+   `greenhouse.io`, `lever.co`, `myworkday*`, `ats.rippling.com`,
+   `smartrecruiters.com`, `workablemail.com`, `bamboohr.com`,
+   `personio.de`, `recruitee.com`, `workatastartup.com` — plus
    the domain of every tracker company.
 3. Classify each thread: confirmation / rejection / screen invite /
    scheduling request / offer / human-other / noise. Quote the evidence

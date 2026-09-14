@@ -1,0 +1,93 @@
+{
+ "jobs": [
+  {
+   "title": "Family Case Manager",
+   "excerpt": "Rockstar is recruiting for a mission-driven end-of-life care company reimagining a $23B industry.",
+   "companyName": "Rockstar",
+   "companySlug": "rockstar",
+   "companyLogo": "https://cdn-images.himalayas.app/adgt0ll62z09boiquaoj4qgcv7pi",
+   "employmentType": "Full Time",
+   "minSalary": 7,
+   "maxSalary": 14,
+   "salaryPeriod": "hourly",
+   "seniority": [
+    "Mid-level"
+   ],
+   "currency": "USD",
+   "locationRestrictions": [
+    "Philippines"
+   ],
+   "timezoneRestrictions": [
+    8
+   ],
+   "categories": [
+    "Case-Management",
+    "Client-Services",
+    "Family-Services",
+    "Customer-Success",
+    "Healthcare-Administration",
+    "Foster-Care-Case-Manager",
+    "Child-Welfare-Case-Manager",
+    "Social-Services-Case-Manager",
+    "Social-Work-Case-Manager"
+   ],
+   "parentCategories": [
+    "Customer Service"
+   ],
+   "description": "<p><a href=\"https://himalayas.app/companies/rockstar\">Rockstar</a> is recruiting for a mission-driven end-of-life care company reimagining a $23B industry. The …",
+   "pubDate": 1789401412,
+   "expiryDate": 1794585411,
+   "applicationLink": "https://himalayas.app/companies/rockstar/jobs/family-case-manager",
+   "guid": "https://himalayas.app/companies/rockstar/jobs/family-case-manager"
+  },
+  {
+   "title": "Senior Software Engineer, Object Storage - DGX Cloud",
+   "excerpt": "NVIDIA is looking for a Senior Software Engineer in Object Storage to design, implement, and extend the capabilities of our internal object storage system.",
+   "companyName": "NVIDIA",
+   "companySlug": "nvidia",
+   "companyLogo": "https://cdn-images.himalayas.app/9jkqq85jdsq9vtt2fuhb5vq8y2zy",
+   "employmentType": "Full Time",
+   "minSalary": 184000,
+   "maxSalary": 356500,
+   "salaryPeriod": "annual",
+   "seniority": [
+    "Senior"
+   ],
+   "currency": "USD",
+   "locationRestrictions": [
+    "United States"
+   ],
+   "timezoneRestrictions": [
+    -10,
+    -9,
+    -8,
+    -7,
+    -6,
+    -5,
+    14
+   ],
+   "categories": [
+    "Software-Engineer",
+    "Object-Storage-Engineering",
+    "Distributed-Systems-Engineering",
+    "Cloud-Infrastructure-Engineering",
+    "Storage-Systems-Engineering",
+    "Senior-Cloud-Software-Engineer",
+    "Senior-Storage-Engineer",
+    "Senior-Storage-Engineering",
+    "Senior-C++-Storage-Engineer",
+    "Senior-Cloud-Data-Platform-Engineer",
+    "Senior-Cloud-Software-Architect",
+    "Senior-Cloud-Platform-Engineer"
+   ],
+   "parentCategories": [
+    "Developer"
+   ],
+   "description": "<p><a href=\"https://himalayas.app/companies/nvidia\">NVIDIA</a> is looking for a Senior Software Engineer in Object Storage to design, implement, and extend the …",
+   "pubDate": 1789401281,
+   "expiryDate": 1794585281,
+   "applicationLink": "https://himalayas.app/companies/nvidia/jobs/senior-software-engineer-object-storage-dgx-cloud-156846996",
+   "guid": "https://himalayas.app/companies/nvidia/jobs/senior-software-engineer-object-storage-dgx-cloud-156846996"
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "total": 2,
+ "jobPostings": [
+  {
+   "title": "Senior Systems Software Engineer - GPU Diagnostics",
+   "externalPath": "/job/US-CA-Santa-Clara/Senior-Systems-Software-Engineer---GPU-Diagnostics_JR2012287",
+   "locationsText": "US, CA, Santa Clara",
+   "postedOn": "Posted Today",
+   "bulletFields": [
+    "JR2012287"
+   ]
+  },
+  {
+   "title": "Senior Applied AI Engineer",
+   "externalPath": "/job/US-CA-Santa-Clara/Senior-Applied-AI-Engineer_JR2025254-1",
+   "locationsText": "US, CA, Santa Clara",
+   "postedOn": "Posted Today",
+   "bulletFields": [
+    "JR2025254"
+   ]
+  }
+ ]
+}

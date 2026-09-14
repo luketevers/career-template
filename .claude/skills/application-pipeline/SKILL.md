@@ -19,23 +19,44 @@ the `setup` skill.
 
 ## 1. Pull the board
 
-Identify the ATS and use its API rather than scraping the JS page:
+Fetch postings with the engine, never by scraping the JS page:
 
-- **Ashby**: `https://api.ashbyhq.com/posting-api/job-board/{org}?includeCompensation=true`
-  (org from the jobs.ashbyhq.com URL; embedded boards leak the slug in the
-  careers page source). Descriptions in `descriptionHtml`. If the posting
-  API returns Not Found, the org disabled it — use the hosted board's
-  GraphQL: POST `https://jobs.ashbyhq.com/api/non-user-graphql`,
-  operation `ApiJobBoardWithTeams`.
-- **Greenhouse**: `https://boards-api.greenhouse.io/v1/boards/{org}/jobs`;
-  one job: `.../jobs/{id}` (`?questions=true` adds application form fields).
-- **Lever**: `https://api.lever.co/v0/postings/{org}?mode=json`.
-- **Workday**: POST `https://{tenant}.wd{N}.myworkdayjobs.com/wday/cxs/{tenant}/{site}/jobs`
-  with `{"searchText":"...","limit":20,"offset":0,"appliedFacets":{}}`;
-  job detail at `.../{site}/job/{externalPath}`. Tenant-variable; best effort.
-- **Anything else**: fetch the page, look for the four above in its source;
-  failing that, ask the user to paste the posting and form questions.
-  Never silently skip the form-review step.
+```
+python3 engine/boards.py <board-url-or-source> --titles-from profile.yaml --json
+```
+
+It detects the provider from the URL and returns one normalized shape
+(`source, company, id, title, location, remote, url, apply_url, salary,
+posted_at, description`). `--titles-from profile.yaml` keeps postings whose
+title contains any of `targets.titles`; drop it to see the whole board.
+`python3 engine/boards.py --list` prints every supported source.
+
+- **ATS boards** (one URL = one company): Ashby, Greenhouse, Lever, Workday,
+  SmartRecruiters, Rippling, Workable, BambooHR, Personio, Recruitee. Pass
+  the board URL (e.g. `https://jobs.ashbyhq.com/{org}`, `https://boards.greenhouse.io/{org}`,
+  `https://{tenant}.wd5.myworkdayjobs.com/{site}`). A company careers page
+  that embeds one of these is detected automatically.
+- **Aggregators** (many companies; filter by title): `yc` (Y Combinator's
+  public jobs pages — add `--role software-engineer`, `--location remote`;
+  applying goes through the user's own Work at a Startup account), `hn`
+  (the latest "Ask HN: Who is hiring" thread — free-text posts, read the
+  `description` for details), `remotive`, `remoteok`, `himalayas`, `jobicy`,
+  `arbeitnow`, `wwr` (We Work Remotely).
+- **VC portfolio boards** (custom domains — pass the `/jobs` URL): Consider-
+  hosted (Sequoia, Kleiner Perkins, Bessemer, Lightspeed, First Round, …) and
+  Getro-hosted (Accel, …). Detected from the page. Consider has no server
+  search, so use `--titles-from profile.yaml --max 500`; Getro takes
+  `--query`. Each posting's `url` is the company's own ATS — hand that to the
+  form step. Custom VC boards (a16z, Greylock) aren't supported; their
+  postings link to Greenhouse/Ashby pages, which are.
+- **Application form fields**: Greenhouse exposes them at
+  `https://boards-api.greenhouse.io/v1/boards/{org}/jobs/{id}?questions=true`;
+  Ashby's hosted board GraphQL (`ApiJobPosting` on `jobs.ashbyhq.com/api/non-user-graphql`)
+  lists its fields. For everything else, open `apply_url` and enumerate by hand.
+- **Exit 2 / "no known job board"**: the ATS isn't supported. Ask the user
+  to paste the posting and form questions. Never silently skip the
+  form-review step. Adding a provider means a fetcher + a fixture test in
+  `engine/boards.py` / `tests/test_boards.py`, not a prose bullet here.
 
 ## 2. Rank fit
 

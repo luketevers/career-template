@@ -1,0 +1,88 @@
+{
+ "version": {
+  "client": {
+   "git": "652d8ce9961754d9c79ce3ab1a6236473a9a142a",
+   "date": "2026-09-14T16:12:47.714Z"
+  },
+  "server": {
+   "git": "652d8ce9961754d9c79ce3ab1a6236473a9a142a",
+   "date": "2026-09-14T16:12:47.714Z"
+  }
+ },
+ "total": 10033,
+ "meta": {
+  "size": 2,
+  "sequence": "CURSOR2"
+ },
+ "errors": [],
+ "jobs": [
+  {
+   "applyUrl": "https://jobs.ashbyhq.com/harvey/37498a8d-689a-4a59-9973-86b2588c7a45?utm_source=jobs.sequoiacap.com",
+   "companyName": "Harvey",
+   "companySlug": "harvey",
+   "locations": [
+    "New York, New York, USA",
+    "New York",
+    "San Francisco"
+   ],
+   "remote": false,
+   "salary": {
+    "period": {
+     "label": "Year",
+     "value": "year"
+    },
+    "minValue": 136000,
+    "maxValue": 187000,
+    "currency": {
+     "label": "USD",
+     "value": "USD"
+    },
+    "isOriginal": true
+   },
+   "timeStamp": "2026-09-14T00:00:00Z",
+   "title": "Senior Motion Designer",
+   "url": "https://jobs.ashbyhq.com/harvey/37498a8d-689a-4a59-9973-86b2588c7a45",
+   "jobId": "37498a8d-689a-4a59-9973-86b2588c7a45",
+   "jobFunctions": [
+    {
+     "id": "Design",
+     "label": "Design",
+     "value": "Design"
+    }
+   ]
+  },
+  {
+   "applyUrl": "https://cohesity.wd5.myworkdayjobs.com/Cohesity_Careers/job/USA---North-Carolina---Remote/Principal-Sales-Engineer_R04722",
+   "companyName": "Cohesity",
+   "companySlug": "cohesity",
+   "locations": [
+    "United States of America"
+   ],
+   "remote": true,
+   "salary": {
+    "period": {
+     "label": "Year",
+     "value": "year"
+    },
+    "minValue": 218120,
+    "maxValue": 272650,
+    "currency": {
+     "label": "USD",
+     "value": "USD"
+    },
+    "isOriginal": true
+   },
+   "timeStamp": "2026-09-13T00:00:00Z",
+   "title": "Principal Sales Engineer",
+   "url": "https://cohesity.wd5.myworkdayjobs.com/Cohesity_Careers/job/USA---North-Carolina---Remote/Principal-Sales-Engineer_R04722",
+   "jobId": "527912814dd8100082c11fb40d720000",
+   "jobFunctions": [
+    {
+     "id": "Engineering",
+     "label": "Engineering",
+     "value": "Engineering"
+    }
+   ]
+  }
+ ]
+}

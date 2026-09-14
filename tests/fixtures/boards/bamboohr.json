@@ -1,0 +1,29 @@
+{
+ "meta": {
+  "totalCount": 2
+ },
+ "result": [
+  {
+   "id": "101",
+   "jobOpeningName": "Senior Data Engineer",
+   "departmentLabel": "Engineering",
+   "employmentStatusLabel": "Full-Time",
+   "location": {
+    "city": "Denver",
+    "state": "Colorado"
+   },
+   "isRemote": true
+  },
+  {
+   "id": "102",
+   "jobOpeningName": "HR Generalist",
+   "departmentLabel": "People",
+   "employmentStatusLabel": "Full-Time",
+   "location": {
+    "city": "Austin",
+    "state": "Texas"
+   },
+   "isRemote": null
+  }
+ ]
+}

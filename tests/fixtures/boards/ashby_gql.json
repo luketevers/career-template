@@ -1,0 +1,24 @@
+{
+ "data": {
+  "jobBoard": {
+   "jobPostings": [
+    {
+     "id": "c21af93e-210f-4969-8eaa-90fb16a5b720",
+     "title": "Account Executive, Startups",
+     "locationName": "North America",
+     "employmentType": "FullTime",
+     "secondaryLocations": [],
+     "compensationTierSummary": null
+    },
+    {
+     "id": "f272fc4a-91a7-4dcf-9cb5-3600ebaf14e1",
+     "title": "Analytics Engineer",
+     "locationName": "North America",
+     "employmentType": "FullTime",
+     "secondaryLocations": [],
+     "compensationTierSummary": null
+    }
+   ]
+  }
+ }
+}

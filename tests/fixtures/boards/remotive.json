@@ -1,0 +1,58 @@
+{
+ "jobs": [
+  {
+   "id": 1680495,
+   "url": "https://remotive.com/remote-jobs/marketing/remote-office-assistant-1680495",
+   "title": "Remote Office Assistant",
+   "company_name": "Coalition Technologies ",
+   "company_logo": "https://remotive.com/job/1680495/logo",
+   "category": "Marketing",
+   "tags": [
+    "CSS",
+    "excel",
+    "frontend",
+    "git",
+    "html",
+    "illustrator",
+    "magento",
+    "photoshop",
+    "php",
+    "shopify",
+    "wordpress",
+    "MySQL",
+    "startup",
+    "responsive",
+    "themes",
+    "bootstrap",
+    "insurance",
+    "jQuery",
+    "Ajax"
+   ],
+   "job_type": "full_time",
+   "publication_date": "2026-09-11T20:16:48",
+   "candidate_required_location": "Worldwide",
+   "salary": "$31,2k- $52k",
+   "description": "<p class=\"h3\">Coalition Technologies is seeking a reliable, detail-oriented, and highly organized Remote Office Assistant to support administrative, bookkeeping…",
+   "company_logo_url": "https://remotive.com/job/1680495/logo"
+  },
+  {
+   "id": 2091126,
+   "url": "https://remotive.com/remote-jobs/artificial-intelligence/ai-response-evaluator-2091126",
+   "title": "AI Response Evaluator",
+   "company_name": "iMerit Technology",
+   "company_logo": "https://remotive.com/job/2091126/logo",
+   "category": "Artificial Intelligence",
+   "tags": [
+    "AI/ML",
+    "research",
+    "SOLID"
+   ],
+   "job_type": "freelance",
+   "publication_date": "2026-09-11T06:49:00",
+   "candidate_required_location": "France, Japan, Turkey, Vietnam, Mexico, Norway",
+   "salary": "$10K-$20K",
+   "description": "<p>iMerit is looking for detail oriented analysts to evaluate and rank AI generated responses to image based prompts. You will judge answers on accuracy, releva…",
+   "company_logo_url": "https://remotive.com/job/2091126/logo"
+  }
+ ]
+}
