@@ -72,3 +72,20 @@ def test_filter_by_title():
     postings = [{"title": "Senior Platform Engineer"}, {"title": "Account Manager"}, {"title": None}]
     assert jobboards.filter_by_title(postings, ["platform", "staff"]) == [postings[0]]
     assert jobboards.filter_by_title(postings, []) == postings
+
+
+@pytest.mark.parametrize("board_title", [
+    "Senior / Staff Fullstack Engineer",
+    "Full Stack Engineer, Growth",
+    "FULL-STACK ENGINEER",
+    "Software Engineer (Full-stack)",
+])
+def test_filter_by_title_ignores_spelling_variants(board_title):
+    """A profile that says 'Full-Stack Engineer' must catch every way boards write it."""
+    postings = [{"title": board_title}, {"title": "Backend Engineer"}]
+    assert jobboards.filter_by_title(postings, ["Full-Stack Engineer"]) == [postings[0]]
+
+
+def test_normalize_title():
+    assert jobboards.normalize_title("Full-Stack Engineer") == jobboards.normalize_title("fullstack engineer") == "fullstackengineer"
+    assert jobboards.normalize_title("Member of Technical Staff") == "memberoftechnicalstaff"

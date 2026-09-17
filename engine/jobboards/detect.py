@@ -117,13 +117,20 @@ def _sniff_page(url: str) -> Detection | None:
     return detect(embedded_url) if embedded_url else None
 
 
+def normalize_title(text: str) -> str:
+    """Lowercase alphanumerics only, so spelling variants collide:
+    'Full-Stack Engineer', 'Fullstack Engineer', 'Full Stack engineer' → 'fullstackengineer'."""
+    return re.sub(r"[^a-z0-9]+", "", text.lower())
+
+
 def filter_by_title(postings: list[dict], keywords: list[str]) -> list[dict]:
-    """Keep postings whose title contains any keyword (case-insensitive).
-    No keywords → everything, so an empty profile target list is harmless."""
-    needles = [keyword.strip().lower() for keyword in keywords if keyword.strip()]
+    """Keep postings whose title contains any keyword, after normalizing
+    both sides (see normalize_title). No keywords → everything, so an empty
+    profile target list is harmless."""
+    needles = [normalize_title(keyword) for keyword in keywords if normalize_title(keyword)]
     if not needles:
         return postings
     return [
         posting for posting in postings
-        if posting.get("title") and any(needle in posting["title"].lower() for needle in needles)
+        if posting.get("title") and any(needle in normalize_title(posting["title"]) for needle in needles)
     ]

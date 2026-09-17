@@ -21,7 +21,7 @@ Public API (re-exported here):
 
     fetch(url_or_name, query=None, max_items=None) -> (provider_key, postings)
     detect(url_or_name) -> Detection | None
-    filter_by_title(postings, keywords) -> postings
+    filter_by_title(postings, keywords) -> postings   (spelling-insensitive)
 """
 from .detect import (  # noqa: F401
     SOURCE_ALIASES,
@@ -31,6 +31,7 @@ from .detect import (  # noqa: F401
     detect_portfolio_platform,
     fetch,
     filter_by_title,
+    normalize_title,
 )
 from .posting import normalize_posting  # noqa: F401
 from .provider import FetchOptions, Provider  # noqa: F401
