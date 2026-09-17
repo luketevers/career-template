@@ -78,12 +78,19 @@ def test_filter_by_title():
     "Senior / Staff Fullstack Engineer",
     "Full Stack Engineer, Growth",
     "FULL-STACK ENGINEER",
-    "Software Engineer (Full-stack)",
 ])
 def test_filter_by_title_ignores_spelling_variants(board_title):
-    """A profile that says 'Full-Stack Engineer' must catch every way boards write it."""
+    """A profile that says 'Full-Stack Engineer' must catch every way boards spell it."""
     postings = [{"title": board_title}, {"title": "Backend Engineer"}]
     assert jobboards.filter_by_title(postings, ["Full-Stack Engineer"]) == [postings[0]]
+
+
+def test_filter_by_title_is_still_a_phrase_match():
+    """Word order matters: 'Software Engineer (Full-stack)' is not the phrase
+    'Full-Stack Engineer'. Users list such titles separately."""
+    postings = [{"title": "Software Engineer (Full-stack)"}]
+    assert jobboards.filter_by_title(postings, ["Full-Stack Engineer"]) == []
+    assert jobboards.filter_by_title(postings, ["Software Engineer"]) == postings
 
 
 def test_normalize_title():
