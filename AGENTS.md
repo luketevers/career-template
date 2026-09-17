@@ -26,6 +26,11 @@ metrics; honest `gaps`); build `resume/resume.yaml` as a selection of those
 ids; render and check (below) until green; `python3 engine/season.py
 scaffold <year>`.
 
+**Todos and the digest**: blocked actions go in the tracker via
+`python3 engine/todos.py <season> add "apply to X after Y" --company X`
+(`done N` when cleared); `python3 engine/digest.py <season>` prints the
+morning state. Never email the digest unattended (Constitution II).
+
 **Apply to a role**:
 1. Fetch postings with `python3 engine/boards.py <board-url> --titles-from
    profile.yaml --json` (Ashby, Greenhouse, Lever, Workday, SmartRecruiters,

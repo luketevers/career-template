@@ -17,6 +17,12 @@ Status: CLOSED 2026-09-11. Last sweep: 2026-09-10.
 | Company | Role | Applied | Predicted fit | Outcome |
 |---|---|---|---|---|
 
+## Todos
+
+| # | Todo | Company | Waiting on | Added | Done |
+|---|---|---|---|---|---|
+| 1 | apply to Vanta | Vanta | a referral link from a former teammate | 2026-08-11 | 2026-08-14 |
+
 ## Notes
 
 Fictional season for demonstration. Companies and postings are real and

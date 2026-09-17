@@ -36,6 +36,9 @@ updates. Full boundary: `ENGINE-UPDATE.md`. Principles:
 - Tracker updates (a row per application, with predicted fit) happen when
   the user reports applying; commit and push after each change.
 - Inbox/calendar sweeps are propose-only; see the `season` skill.
+- "todo: …" from the user → `python3 engine/todos.py <season> add`; sweeps
+  report open todos. The digest (`engine/digest.py`) is never sent as
+  email unattended — notification or draft only.
 - Seasons close via `python3 engine/season.py close <id>` and are
   append-only afterward.
 - Interviews prep from the exact variant that company received

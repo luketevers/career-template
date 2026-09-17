@@ -76,9 +76,11 @@ setup ─► discover ─► rank (+your corrections) ─► tailor ─► apply
 5. **Apply** — every form field enumerated into a checklist; answers
    drafted in your voice; **you** submit.
 6. **Track** — every application logged with its fit prediction;
-   `board.html` gives you the season at a glance (tiles, stages, a silence
-   watchlist); with email/calendar connectors, sweeps classify responses
-   and propose updates.
+   blocked actions ("apply to Snowflake after getting the referral link")
+   are todos with what they wait on; `board.html` gives you the season at
+   a glance (tiles, todos, stages, a silence watchlist); a morning digest
+   prints the same state as text; with email/calendar connectors, sweeps
+   classify responses, report todos, and propose updates.
 7. **Interview** — prep sheets built from the exact variant that company
    received; same-day debriefs.
 8. **Close** — the season freezes; the retro tells you what your

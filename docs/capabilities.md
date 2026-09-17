@@ -29,6 +29,8 @@ into a void.
 | `python3 engine/boards.py URL-or-source [--titles-from profile.yaml] [--titles a,b] [--query Q] [--role R] [--location L] [--max N] [--json] [--list]` | Fetch a job board into one normalized posting shape. Detects the ATS from the URL (or a careers page embedding one); aggregators by name (`yc`, `hn`, …). Exit 1 = nothing matched, 2 = unsupported source. |
 | `python3 engine/season.py scaffold ID` | Start a season (`searches/ID/` + tracker). IDs: `2026`, `2026b`. |
 | `python3 engine/season.py close ID` | Close a season: requires every row at a terminal stage; writes `retro.md` (predicted fit vs outcome vs response time); freezes the tracker. |
+| `python3 engine/todos.py ID add "do X after Y" [--company C] [--waiting-on W]` / `done N` / `list [--all]` | Todos in the tracker's `## Todos` table: blocked or pending actions ("apply to Snowflake after getting the referral link"). The after/once/when-clause becomes *Waiting on*. Numbers are stable; done rows stay, dated. Creates the section in older trackers. |
+| `python3 engine/digest.py ID [--watch-days 14] [--json]` | The morning digest: counts, open todos, gone-quiet applications, live conversations, as markdown (or JSON). Same numbers as the board. Delivery is bounded by Constitution II — see the season skill. |
 | `python3 engine/board.py ID [--watch-days 14] [--out P]` | Render the season to a self-contained `board.html`: tiles, stage table, silence watchlist, retro link. A view, never a source of truth — delete and regenerate freely. |
 | `bash scripts/install.sh [--dev] [--with-browser] [--system]` | Environment setup (macOS/Linux): Python 3.11+ check, `.venv/` with deps, browser detection (or install), smoke test on the example data. Idempotent. |
 | `bash demo/demo.sh` | The full demo on the fictional example data. |
@@ -65,7 +67,10 @@ it splits by responsibility rather than growing.
 | `engine/build_resume.py` | profile + selection + layout → HTML; the Truth Only check |
 | `engine/render_check.py` | HTML → PDF via headless Chrome; page-count and orphan-line checks |
 | `engine/season.py` | season scaffold/close; the tracker-markdown parser both scripts share |
-| `engine/board.py` | tracker → board.html (tiles, stage table, silence watchlist) |
+| `engine/season_state.py` | one read of the tracker bucketed for every view: live/resolved/advanced/offers, gone-quiet rows, open and done todos |
+| `engine/board.py` | season state → board.html (tiles, todos, silence watchlist, stage tables) |
+| `engine/todos.py` | add/done/list todos in the tracker; splits "after …" into *Waiting on* |
+| `engine/digest.py` | season state → the morning digest as markdown or JSON |
 | `engine/onboard.py` | interactive structured-field onboarding, comment-preserving |
 | `engine/boards.py` | thin entry for the command below |
 | `engine/jobboards/` | the board fetcher: `http.py` (one network call), `posting.py` (the normalized shape), `provider.py` (the contract), `providers/{ats,aggregators,portfolio}/` (one module per source), `registry.py`, `detect.py`, `cli.py` |
@@ -93,6 +98,20 @@ every provider has a fixture-backed test.
   Jobvite, Taleo (HTML-only, would require scraping JS pages).
 
 Anything else: paste the posting; the form-review step is never skipped.
+
+## Todos and the morning digest
+
+A todo is an action the user cannot take yet: "apply to Snowflake after
+getting the referral link". It lives in the tracker's `## Todos` table with
+what it is waiting on, so it shows on the board, in the digest, and in every
+inbox sweep — which reports each open todo and flags evidence that its
+blocker has cleared. Done todos stay, dated, so the retro can see how long
+referrals and reopenings actually took.
+
+The digest (`engine/digest.py`) is the same state as the board, as text.
+It is delivered on demand, by a scheduled Claude Code routine as a
+notification, or as a Gmail *draft* to the user — never as sent mail, never
+unattended (Constitution II).
 
 ## What it will not do
 

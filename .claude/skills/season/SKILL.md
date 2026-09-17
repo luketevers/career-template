@@ -25,6 +25,24 @@ them in the tracker's Notes.
   `rejected / withdrawn / ghosted / accepted`. Record First response the
   first time a human (or rejection) responds.
 
+## Todos
+
+Anything the user cannot apply to yet — a referral link on its way, a req
+that hasn't reopened, a contact to hear back from — is a todo, not a queue
+entry and not an application row.
+
+- When the user says "todo: apply to Snowflake after getting the referral
+  link" (or anything shaped like a blocked action), run
+  `python3 engine/todos.py <season> add "<their words>" --company <Company>`.
+  The after/once/when-clause becomes the "Waiting on" column automatically;
+  pass `--waiting-on` when the phrasing is different. Read the number back
+  to the user ("todo #3").
+- When the blocker clears or the application goes out:
+  `python3 engine/todos.py <season> done <#>`, then add the application row
+  as usual. Done todos stay in the table, dated, for the retro.
+- `python3 engine/todos.py <season> list` shows what is open. The board and
+  the digest show the same list; regenerate the board after changes.
+
 ## Sweep (requires mail/calendar connectors — Claude Code-only)
 
 Propose-only, always:
@@ -41,16 +59,43 @@ Propose-only, always:
    line for anything that changes a status.
 4. Calendar: list the next ~3 weeks; flag interview-shaped events and
    conflicts with Notes constraints.
-5. Output: proposed tracker edits (with evidence), a silence watchlist
-   (strong-fit applications past ~14 days with no human response), and
-   anything the sweep caught that isn't recruiting (e.g. a personal-site
-   outage a recruiter might hit).
-6. Write NOTHING until the user approves. Never reply to, label, or send
+5. Todos: list every open todo with what it is waiting on. For each one,
+   say whether anything in this sweep's mail or calendar looks like the
+   blocker clearing (a referral link arriving, a contact replying, a req
+   reopening) and quote the evidence. Propose `todos.py done <#>` only
+   when the evidence is explicit; otherwise report "still waiting, N days".
+6. Output: proposed tracker edits (with evidence), the todo report, a
+   silence watchlist (strong-fit applications past ~14 days with no human
+   response), and anything the sweep caught that isn't recruiting (e.g. a
+   personal-site outage a recruiter might hit).
+7. Write NOTHING until the user approves. Never reply to, label, or send
    email. Follow-up nudges: draft only via the voice skill, send only by
    the user.
 
 Without connectors: skip to asking the user what's landed and update rows
 manually.
+
+## Morning digest
+
+`python3 engine/digest.py <season>` prints the state of the hunt as short
+markdown: counts, open todos and what they wait on, applications gone
+quiet, live conversations. Same numbers as the board.
+
+How it reaches the user is bounded by Constitution II — the system never
+sends unattended outbound email, and that includes mail to the user
+themselves. Three delivery paths are fine:
+
+1. On demand: the user asks "where am I?" and the agent runs the digest
+   (with connectors, run a sweep first so it is current).
+2. Scheduled: a Claude Code routine (`/schedule`, the user's own account)
+   runs the digest each morning and delivers it as a notification in the
+   session. Propose-only still applies to anything the routine's sweep
+   finds.
+3. Draft: with the Gmail connector, the agent may create a *draft*
+   addressed to the user containing the digest. The user sends it or not.
+
+Never `send_message` the digest, never on a schedule, even when asked —
+say why and offer paths 2 or 3 instead.
 
 ## Close
 

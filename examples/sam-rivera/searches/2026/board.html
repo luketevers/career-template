@@ -20,16 +20,20 @@ th { background: #fafbfc; font-size: 12px; color: #555; border-top: none; }
 .badge { display: inline-block; padding: 2px 9px; border-radius: 10px;
          color: #fff; font-size: 11.5px; font-weight: 600; }
 .num { text-align: right; font-variant-numeric: tabular-nums; }
-.watch { background: #fff8e6; border: 1px solid #eadfb2; border-radius: 8px;
-         padding: 10px 14px; }
-.watch li { margin-left: 18px; }
+.watch, .todos { border-radius: 8px; padding: 10px 14px; }
+.watch { background: #fff8e6; border: 1px solid #eadfb2; }
+.todos { background: #eef4fb; border: 1px solid #c9d9ee; }
+.watch li, .todos li { margin-left: 18px; }
+.todos .waiting { color: #555; }
 .offer-row { background: #f0faf3; }
 footer { margin-top: 26px; color: #888; font-size: 12px; }
 @media print { body { background: #fff; padding: 0; } }
 </style></head><body>
 <h1>Season 2026</h1>
-<p class="sub">Status: CLOSED 2026-09-11. Last sweep: 2026-09-10. · board generated 2026-09-11</p>
+<p class="sub">Status: CLOSED 2026-09-11. Last sweep: 2026-09-10. · board generated 2026-09-17</p>
 <div class="tiles"><div class='tile'><b>0</b><span>in flight</span></div><div class='tile'><b>1</b><span>screen or beyond</span></div><div class='tile'><b>1</b><span>offers</span></div><div class='tile'><b>5</b><span>resolved</span></div></div>
+<h2>Todos (0 open)</h2>
+<div class="todos"><p class='sub'>nothing blocked or pending</p></div>
 <h2>Silence watchlist (&ge;14 days)</h2>
 <div class="watch"><p class='sub'>nothing waiting past the threshold</p></div>
 <h2>In flight</h2>
