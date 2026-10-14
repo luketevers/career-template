@@ -70,9 +70,9 @@ def role_to_posting(role: dict, share_url: str, company_slug: str) -> dict:
 def _salary(role: dict) -> str | None:
     if role.get("hide_salary"):
         return None
-    summary = (role.get("candidate_salary_info") or "").strip()
+    summary = strip_tags(role.get("candidate_salary_info"))
     if summary:
-        return summary
+        return re.sub(r"\s+", " ", summary)
     return salary_range(role.get("salaryLowerBound"), role.get("salaryUpperBound"), role.get("currencyType"))
 
 

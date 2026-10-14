@@ -109,7 +109,7 @@ def test_fetch_paraform(network):
     assert posting["title"] == "Member of Technical Staff (Product Engineer)"
     assert posting["location"] == "San Francisco, CA (On-site)"
     assert posting["remote"] is False
-    assert posting["salary"].startswith("$170K - $320K")
+    assert posting["salary"].startswith("$170K - $320K") and "<" not in posting["salary"]
     assert posting["posted_at"] == "2026-10-02T16:59:50.511Z"
     assert "Application questions:" in posting["description"]
     assert "5 days a week" in posting["description"]
