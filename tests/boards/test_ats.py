@@ -96,3 +96,29 @@ def test_fetch_recruitee(network):
     assert_normalized(postings, "recruitee")
     assert postings[0]["apply_url"].endswith("/c/new")
     assert postings[1]["remote"] is False
+
+
+def test_fetch_paraform(network):
+    fake = network({"www.paraform.com/share/fulcrum/cmur7eorr002e0ck048qumonr": "paraform.html"})
+    key, postings = jobboards.fetch("https://www.paraform.com/share/fulcrum/cmur7eorr002e0ck048qumonr")
+    assert key == "paraform"
+    assert_normalized(postings, "paraform", expected_count=1)
+    posting = postings[0]
+    assert posting["company"] == "Fulcrum"
+    assert posting["id"] == "cmur7eorr002e0ck048qumonr"
+    assert posting["title"] == "Member of Technical Staff (Product Engineer)"
+    assert posting["location"] == "San Francisco, CA (On-site)"
+    assert posting["remote"] is False
+    assert posting["salary"].startswith("$170K - $320K")
+    assert posting["posted_at"] == "2026-10-02T16:59:50.511Z"
+    assert "Application questions:" in posting["description"]
+    assert "5 days a week" in posting["description"]
+    assert "TypeScript, Python, React" in posting["description"]
+    assert len(fake.calls) == 1
+
+
+def test_fetch_paraform_404_page_yields_nothing(network):
+    network({"www.paraform.com/share/": b"<html><script id=\"__NEXT_DATA__\" type=\"application/json\">{\"page\":\"/404\",\"props\":{\"pageProps\":{}}}</script></html>"})
+    _, postings = jobboards.fetch("https://www.paraform.com/share/nobody/missing")
+    assert postings == []
+

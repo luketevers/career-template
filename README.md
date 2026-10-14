@@ -65,7 +65,8 @@ setup ─► discover ─► rank (+your corrections) ─► tailor ─► apply
    your evergreen resume, checks the render, scaffolds a season. ~an hour.
 2. **Discover** — point it at any job board; postings come from public
    ATS endpoints (Ashby, Greenhouse, Lever, Workday, SmartRecruiters,
-   Rippling, Workable, BambooHR, Personio, Recruitee) or aggregators
+   Rippling, Workable, BambooHR, Personio, Recruitee, Paraform share
+   links) or aggregators
    (Y Combinator, Ask HN: Who is hiring, Remotive, RemoteOK, and more) or
    VC portfolio boards (Sequoia, Accel, Kleiner Perkins, …), normalized by
    `engine/boards.py`.

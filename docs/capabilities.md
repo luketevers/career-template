@@ -85,6 +85,10 @@ every provider has a fixture-backed test.
   Greenhouse (form fields via `?questions=true`), Lever, Workday (best effort;
   tenants vary), SmartRecruiters, Rippling, Workable, BambooHR, Personio,
   Recruitee. A company careers page that embeds one of these is detected.
+  Paraform recruiter share links (`paraform.com/share/{company}/{role}`):
+  one link is one role, parsed from the page; the role's application
+  questions are appended to the description, and applying goes through
+  the recruiter.
 - **Aggregators** (filter by title): Y Combinator jobs (`yc`; public pages,
   applying needs the user's Work at a Startup account), Ask HN: Who is hiring
   (`hn`), Remotive, RemoteOK, Himalayas, Jobicy, Arbeitnow, We Work Remotely.

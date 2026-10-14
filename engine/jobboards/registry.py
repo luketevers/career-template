@@ -17,6 +17,7 @@ from .providers.ats import (
     bamboohr,
     greenhouse,
     lever,
+    paraform,
     personio,
     recruitee,
     rippling,
@@ -38,6 +39,7 @@ PROVIDERS: tuple[Provider, ...] = (
     bamboohr.PROVIDER,
     personio.PROVIDER,
     recruitee.PROVIDER,
+    paraform.PROVIDER,
     # Aggregators — market-shaped
     yc.PROVIDER,
     hn.PROVIDER,

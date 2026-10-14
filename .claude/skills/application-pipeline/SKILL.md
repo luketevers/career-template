@@ -36,6 +36,10 @@ title contains any of `targets.titles`; drop it to see the whole board.
   the board URL (e.g. `https://jobs.ashbyhq.com/{org}`, `https://boards.greenhouse.io/{org}`,
   `https://{tenant}.wd5.myworkdayjobs.com/{site}`). A company careers page
   that embeds one of these is detected automatically.
+- **Recruiter share links**: Paraform (`paraform.com/share/{company}/{role}`)
+  returns that one role with its application questions appended to the
+  description. There is no company listing and no public form: the resume
+  and answers go back to the recruiter who sent the link.
 - **Aggregators** (many companies; filter by title): `yc` (Y Combinator's
   public jobs pages — add `--role software-engineer`, `--location remote`;
   applying goes through the user's own Work at a Startup account), `hn`
